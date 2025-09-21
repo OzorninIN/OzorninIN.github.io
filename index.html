@@ -94,6 +94,26 @@
         .brand-font {
             font-family: 'Orbitron', sans-serif;
         }
+
+        /* Пользовательские медиазапросы для переключения на 1140px */
+        /* Показываем навигацию и скрываем кнопку-бургер на больших экранах */
+        @media (min-width: 1141px) {
+            #desktop-nav {
+                display: flex !important;
+            }
+            #mobile-menu-btn {
+                display: none !important;
+            }
+        }
+        /* Скрываем навигацию и показываем кнопку-бургер на маленьких экранах */
+        @media (max-width: 1140px) {
+            #desktop-nav {
+                display: none !important;
+            }
+            #mobile-menu-btn {
+                display: flex !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#111c22]">
@@ -105,7 +125,7 @@
                     <span class="material-symbols-outlined text-3xl"> code </span>
                     <h2 class="text-white text-xl font-bold tracking-tight brand-font">Озорнин И.Н.</h2>
                 </a>
-                <nav class="hidden md:flex items-center gap-6">
+                <nav id="desktop-nav" class="items-center gap-6">
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
@@ -120,12 +140,12 @@
                 <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-[#92b7c9] hover:text-white transition-colors">
                     <span class="material-symbols-outlined"> visibility </span>
                 </button>
-                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
                     <span class="material-symbols-outlined"> menu </span>
                 </button>
             </div>
         </header>
-        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+        <nav id="mobile-nav" class="hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
             <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
@@ -224,7 +244,7 @@
                                 <p class="text-[#92b7c9] text-base font-normal mb-2">
                                     но вы можете ознакомиться со всеми курсами которые мы предлагаем
                                 </p>
-                                <a href="https://р38.навигатор.дети/directivities?organizators=2035&_t=1758300620516" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors w-full">
+                                <a href="https://р38.навигатор.дети/directivities?organizators=2035&_t=1758300620516" class="flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors w-full">
                                     <span class="truncate">Все курсы</span>
                                 </a>
                             </div>
