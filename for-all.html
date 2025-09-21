@@ -7,6 +7,17 @@
     <title>Озорнин И.Н. - Для всех</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'desktop': '1140px',
+                    },
+                },
+            },
+        };
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <style>
         /* Стили для режима слабовидящих */
@@ -96,7 +107,7 @@
                     <span class="material-symbols-outlined text-3xl"> code </span>
                     <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
                 </a>
-                <nav class="hidden md:flex items-center gap-6">
+                <nav class="hidden desktop:flex items-center gap-6">
                     <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
                     <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
                     <a class="text-white text-sm font-medium transition-colors" href="for-all.html" aria-current="page">Для педагогов, обучающихся и родителей</a>
@@ -112,12 +123,12 @@
                 <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
                     <span class="material-symbols-outlined"> visibility </span>
                 </button>
-                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors desktop:hidden">
                     <span class="material-symbols-outlined"> menu </span>
                 </button>
             </div>
         </header>
-        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+        <nav id="mobile-nav" class="hidden desktop:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
             <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
@@ -128,12 +139,12 @@
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
         </nav>
         <main class="flex-1">
-            <section class="relative flex min-h-[60vh] items-center justify-center py-20 md:min-h-screen">
+            <section class="relative flex min-h-[60vh] items-center justify-center py-20 desktop:min-h-screen">
                 <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2711&auto=format&fit=crop");'></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#111c22] via-[#111c22]/50 to-transparent"></div>
                 <div class="container relative z-10 mx-auto px-4 text-center sm:px-6 lg:px-8">
-                    <h1 class="text-4xl font-black tracking-tighter text-white sm:text-5xl md:text-7xl">Ресурсы для педагогов, обучающихся и родителей</h1>
-                    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">Откройте для себя мир знаний и инноваций в IT.</p>
+                    <h1 class="text-4xl font-black tracking-tighter text-white sm:text-5xl desktop:text-7xl">Ресурсы для педагогов, обучающихся и родителей</h1>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 desktop:text-xl">Откройте для себя мир знаний и инноваций в IT.</p>
                     <div class="mt-10 flex flex-wrap justify-center gap-4">
                         <a class="inline-flex h-12 items-center justify-center rounded-md bg-[#1193d4] px-8 text-base font-bold text-white shadow-lg shadow-[#1193d4]/20 transition-all hover:bg-opacity-90 hover:scale-105" href="#resources">Начать обзор</a>
                         <a class="inline-flex h-12 items-center justify-center rounded-md border border-gray-600 bg-[#233c48] px-8 text-base font-bold text-white transition-all hover:border-gray-500 hover:bg-[#233c48] hover:scale-105" href="contacts.html">Связаться со мной</a>
@@ -197,8 +208,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row gap-6 p-4">
-                    <div class="flex flex-col gap-6 w-full md:w-1/2">
+                <div class="flex flex-col desktop:flex-row gap-6 p-4">
+                    <div class="flex flex-col gap-6 w-full desktop:w-1/2">
                         <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
                             <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
                                 Какие курсы вы предлагаете?
@@ -246,7 +257,7 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-6 w-full md:w-1/2">
+                    <div class="flex flex-col gap-6 w-full desktop:w-1/2">
                         <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
                             <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
                                 Для какого возраста подходят ваши курсы?

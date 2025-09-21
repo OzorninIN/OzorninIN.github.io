@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700&family=Orbitron%3Awght%40700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght@400;500;700;900&family=Space+Grotesk%3Awght@400;500;700&family=Orbitron%3Awght@700" onload="this.rel='stylesheet'" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <title>Озорнин И.Н. - Контакты</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
@@ -21,52 +21,88 @@
         .high-contrast .bg-\[\#111c22\],
         .high-contrast .bg-\[\#233c48\],
         .high-contrast .bg-\[\#192b33\],
-        .high-contrast .bg-center {
-            background-color: #f8f9fa !important;
-            border-color: #111c22 !important;
+        .high-contrast .bg-\[\#4a5568\],
+        .high-contrast .bg-\[\#1193d4\] {
+            background-color: #ffffff !important;
+            border-color: #000000 !important;
         }
         .high-contrast .text-white,
         .high-contrast .text-white\/80,
         .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .text-\[\#1193d4\],
         .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
         .high-contrast .material-symbols-outlined {
-            color: #111c22 !important;
+            color: #000000 !important;
         }
-        .high-contrast .text-\[\#1193d4\] {
-            color: #007BFF !important;
+        .high-contrast button,
+        .high-contrast a.flex.min-w-\[84px\],
+        .high-contrast .form-radio {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
+        .high-contrast button .material-symbols-outlined,
+        .high-contrast button .truncate,
+        .high-contrast a.flex.min-w-\[84px\] .truncate {
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:bg-\[\#233c48\]:hover,
+        .high-contrast .hover\:bg-\[\#192b33\]:hover,
+        .high-contrast .hover\:bg-\[\#1193d4\]:hover {
+            background-color: #cccccc !important;
+        }
+        .high-contrast .hover\:text-white:hover {
+            color: #000000 !important;
         }
         .high-contrast .border-\[\#233c48\],
         .high-contrast .border-\[\#325567\] {
-            border-color: #111c22 !important;
+            border-color: #000000 !important;
         }
-        /* Стили для форм */
-        .form-input, .form-textarea {
-            background-color: #111c22 !important;
-            border-color: #325567 !important;
-            color: #ffffff !important;
+        .high-contrast .bg-cover {
+            background-image: none !important;
         }
-        .high-contrast .form-input, .high-contrast .form-textarea {
-            background-color: #e2e6ea !important;
-            border-color: #111c22 !important;
-            color: #111c22 !important;
+        .high-contrast .bg-contain {
+            background-image: none !important;
+        }
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Пользовательские медиазапросы для переключения на 1140px */
+        /* Показываем навигацию и скрываем кнопку-бургер на больших экранах */
+        @media (min-width: 1141px) {
+            #desktop-nav {
+                display: flex !important;
+            }
+            #mobile-menu-btn {
+                display: none !important;
+            }
+        }
+        /* Скрываем навигацию и показываем кнопку-бургер на маленьких экранах */
+        @media (max-width: 1140px) {
+            #desktop-nav {
+                display: none !important;
+            }
+            #mobile-menu-btn {
+                display: flex !important;
+            }
         }
     </style>
 </head>
-<body class="bg-[#111c22]" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
-    <div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
-            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+<body class="bg-[#111c22]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col text-base">
+            <header class="flex items-center justify-between whitespace-nowrap bg-[#111c22] border-b border-solid border-b-[#233c48] px-10 py-3">
                 <div class="flex items-center gap-8">
                     <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
                         <span class="material-symbols-outlined text-3xl"> code </span>
-                        <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
+                        <h2 class="text-white text-xl font-bold tracking-tight brand-font">Озорнин И.Н.</h2>
                     </a>
-                    <nav class="hidden md:flex items-center gap-6">
-                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
-                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
-                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
-                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
-                        <a class="text-white text-sm font-medium transition-colors" href="contacts.html" aria-current="page">Контакты</a>
+                    <nav id="desktop-nav" class="items-center gap-6">
+                        <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                        <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                        <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                        <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="contacts.html" aria-current="page">Контакты</a>
                     </nav>
                 </div>
                 <div class="flex items-center gap-4">
@@ -74,15 +110,15 @@
                         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
                         <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
                     </label>
-                    <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-[#92b7c9] hover:text-white transition-colors">
                         <span class="material-symbols-outlined"> visibility </span>
                     </button>
-                    <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                    <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
                         <span class="material-symbols-outlined"> menu </span>
                     </button>
                 </div>
             </header>
-            <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <nav id="mobile-nav" class="hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
                 <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
                     <span class="material-symbols-outlined text-4xl">close</span>
                 </button>
@@ -90,56 +126,78 @@
                 <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
                 <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
                 <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
-                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html" aria-current="page">Контакты</a>
             </nav>
             <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
-                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 mx-auto">
-                    <div class="flex flex-col gap-6 p-4">
-                        <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Связаться со мной</h2>
-                        <p class="text-[#92b7c9] text-base font-normal leading-normal">
-                            Если у вас есть вопросы, предложения или вы просто хотите пообщаться, пожалуйста, заполните форму. Я постараюсь ответить вам как можно скорее.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start p-4">
-                        <div class="flex flex-col gap-6">
-                            <h3 class="text-white text-2xl font-bold">Мои контакты</h3>
-                            <div class="flex flex-col gap-2 text-[#92b7c9]">
-                                <div class="flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-[#1193d4]">phone</span>
-                                    <p>Телефон: +7 (924) 543-20-41</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-[#1193d4]">mail</span>
-                                    <p>Email: ilyasrrs2@gmail.com</p>
+                <div class="mx-auto max-w-[960px]">
+                    <h1 class="text-white text-3xl font-bold tracking-tight mb-4 text-center">Контакты</h1>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <p class="text-[#92b7c9] text-base font-normal">
+                                Если у вас возникли вопросы, предложения или вы хотите обсудить возможность сотрудничества, пожалуйста, свяжитесь со мной, используя один из способов, указанных ниже. Я всегда открыт для общения и буду рад ответить на ваши сообщения.
+                            </p>
+                            <div class="bg-[#233c48] rounded-lg p-6 space-y-4">
+                                <h3 class="text-white text-xl font-bold">Способы связи</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center gap-2 text-white">
+                                        <span class="material-symbols-outlined">mail</span>
+                                        <span class="text-[#92b7c9]">ozornin-ilya@yandex.ru</span>
+                                    </li>
+                                    <li class="flex items-center gap-2 text-white">
+                                        <span class="material-symbols-outlined">phone</span>
+                                        <span class="text-[#92b7c9]">+7 (902) 560-61-75</span>
+                                    </li>
+                                    <li class="flex items-center gap-2 text-white">
+                                        <span class="material-symbols-outlined">location_on</span>
+                                        <span class="text-[#92b7c9]">г. Ангарск, Иркутская область, Россия</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-[#233c48] rounded-lg p-6 space-y-4">
+                                <h3 class="text-white text-xl font-bold">Социальные сети</h3>
+                                <div class="flex flex-wrap gap-4">
+                                    <a class="flex items-center gap-2 text-[#92b7c9] hover:text-white transition-colors" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21.5 12c0 5.25-4.5 9.5-9.5 9.5S2.5 17.25 2.5 12 7 2.5 12 2.5s9.5 4.25 9.5 9.5zM12 4.5c-4.14 0-7.5 3.14-7.5 7S7.86 19.5 12 19.5s7.5-3.14 7.5-7-3.36-7-7.5-7z"/>
+                                            <path d="M12 7.75c-2.3 0-4.18 1.96-4.18 4.25s1.88 4.25 4.18 4.25 4.18-1.96 4.18-4.25-1.88-4.25-4.18-4.25zM12 14c-1.24 0-2.25-.97-2.25-2.25S10.76 9.5 12 9.5s2.25.97 2.25 2.25-1.01 2.25-2.25 2.25z"/>
+                                        </svg>
+                                        <span>ВКонтакте</span>
+                                    </a>
+                                    <a class="flex items-center gap-2 text-[#92b7c9] hover:text-white transition-colors" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M22.5 12c0 5.25-4.5 9.5-9.5 9.5S3.5 17.25 3.5 12 8 2.5 13 2.5s9.5 4.25 9.5 9.5zM13 4.5c-4.14 0-7.5 3.14-7.5 7S8.86 19.5 13 19.5s7.5-3.14 7.5-7-3.36-7-7.5-7z"/>
+                                            <path d="M13 7.75c-2.3 0-4.18 1.96-4.18 4.25s1.88 4.25 4.18 4.25 4.18-1.96 4.18-4.25-1.88-4.25-4.18-4.25zM13 14c-1.24 0-2.25-.97-2.25-2.25S11.76 9.5 13 9.5s2.25.97 2.25 2.25-1.01 2.25-2.25 2.25z"/>
+                                        </svg>
+                                        <span>Telegram</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#192B33] p-8 rounded-lg border border-[#325567] shadow-lg">
-                            <h3 class="text-white text-2xl font-bold mb-4">Форма обратной связи</h3>
-                            <form class="flex flex-col gap-6" action="https://formspree.io/f/mandgddr" method="POST">
+                        <div class="bg-[#233c48] rounded-lg p-6 space-y-4">
+                            <h3 class="text-white text-xl font-bold text-center">Задать вопрос</h3>
+                            <form id="contactForm" class="space-y-4">
                                 <div>
-                                    <label class="text-white text-sm font-medium mb-2 block" for="name">Ваше имя</label>
-                                    <input class="form-input w-full bg-[#111c22] border-none rounded-md text-white h-12 px-4 placeholder:text-[#92b7c9] focus:ring-2 focus:ring-[#1193d4] transition-all" id="name" name="name" placeholder="Иван Иванов" type="text"/>
-                                </div>
-                                <div>
-                                    <label class="text-white text-sm font-medium mb-2 block" for="email">Ваш email</label>
-                                    <input class="form-input w-full bg-[#111c22] border-none rounded-md text-white h-12 px-4 placeholder:text-[#92b7c9] focus:ring-2 focus:ring-[#1193d4] transition-all" id="email" name="email" placeholder="ivan@example.com" type="email"/>
+                                    <label class="text-[#92b7c9] block mb-2" for="name">Ваше имя</label>
+                                    <input type="text" id="name" name="name" class="w-full rounded-md bg-[#111c22] text-white border border-[#325567] focus:outline-none focus:ring-2 focus:ring-[#1193d4]" required>
                                 </div>
                                 <div>
-                                    <label class="text-white text-sm font-medium mb-2 block" for="subject">Тема</label>
-                                    <input class="form-input w-full bg-[#111c22] border-none rounded-md text-white h-12 px-4 placeholder:text-[#92b7c9] focus:ring-2 focus:ring-[#1193d4] transition-all" id="subject" name="subject" placeholder="Вопрос по курсу" type="text"/>
+                                    <label class="text-[#92b7c9] block mb-2" for="email">Ваш Email</label>
+                                    <input type="email" id="email" name="email" class="w-full rounded-md bg-[#111c22] text-white border border-[#325567] focus:outline-none focus:ring-2 focus:ring-[#1193d4]" required>
                                 </div>
                                 <div>
-                                    <label class="text-white text-sm font-medium mb-2 block" for="message">Сообщение</label>
-                                    <textarea class="form-textarea w-full bg-[#111c22] border-none rounded-md text-white min-h-36 p-4 placeholder:text-[#92b7c9] focus:ring-2 focus:ring-[#1193d4] transition-all" id="message" name="message" placeholder="Введите ваше сообщение здесь..."></textarea>
+                                    <label class="text-[#92b7c9] block mb-2" for="message">Ваше сообщение</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full rounded-md bg-[#111c22] text-white border border-[#325567] focus:outline-none focus:ring-2 focus:ring-[#1193d4]" required></textarea>
                                 </div>
-                                <div class="flex justify-end">
-                                    <button class="flex items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity" type="submit">
-                                        <span class="material-symbols-outlined">send</span>
-                                        <span>Отправить</span>
-                                    </button>
-                                </div>
+                                <button type="submit" class="w-full flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors">
+                                    <span class="truncate">Отправить</span>
+                                </button>
                             </form>
+                            <div class="mt-8 text-center">
+                                <p class="text-[#92b7c9] text-base mb-2">Или воспользуйтесь онлайн-чатом:</p>
+                                <a id="tawk-chat-link" href="#" class="w-full flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors">
+                                    <span class="truncate">Открыть чат</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,8 +233,7 @@
             }
         });
     </script>
-   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+   <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -188,6 +245,5 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 Tawk_API.setAttributes({ 'language' : 'ru' });
 </script>
-<!--End of Tawk.to Script-->
 </body>
 </html>

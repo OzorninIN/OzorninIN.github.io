@@ -9,6 +9,18 @@
     <title>Озорнин И.Н. - Материалы</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'desktop': '1140px',
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <style>
         /* Стили для режима слабовидящих */
         body.high-contrast {
@@ -81,7 +93,7 @@
                     <span class="material-symbols-outlined text-3xl"> code </span>
                     <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
                 </a>
-                <nav class="hidden md:flex items-center gap-6">
+                <nav class="hidden desktop:flex items-center gap-6">
                     <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
                     <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
                     <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
@@ -97,12 +109,12 @@
                 <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
                     <span class="material-symbols-outlined"> visibility </span>
                 </button>
-                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors desktop:hidden">
                     <span class="material-symbols-outlined"> menu </span>
                 </button>
             </div>
         </header>
-        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+        <nav id="mobile-nav" class="hidden desktop:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
             <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
@@ -112,7 +124,7 @@
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
         </nav>
-        <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+        <main class="flex-1 px-4 sm:px-10 desktop:px-20 lg:px-40 py-8">
             <div class="layout-content-container flex flex-col max-w-[960px] flex-1 mx-auto">
                 <div class="flex flex-wrap justify-between gap-4 p-4">
                     <div class="flex flex-col gap-2">
