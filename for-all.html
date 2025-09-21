@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Для всех</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        /* Стили для режима слабовидящих */
+        body.high-contrast {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        .high-contrast .header,
+        .high-contrast .search-box input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-\[\#4a5568\],
+        .high-contrast .bg-center,
+        .high-contrast button,
+        .high-contrast a.flex.min-w-\[84px\] {
+            background-color: #ffffff !important;
+            border-color: #000000 !important;
+            color: #000000 !important;
+        }
+        /* Тексты и иконки */
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .text-\[\#1193d4\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined,
+        .high-contrast .hover-glow {
+            color: #000000 !important;
+        }
+        /* Кнопки-спаны с навыками */
+        .high-contrast .bg-\[\#233c48\].text-\[\#92b7c9\] {
+            background-color: #e2e6ea !important;
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:bg-\[\#233c48\]:hover,
+        .high-contrast .hover\:bg-\[\#192b33\]:hover,
+        .high-contrast .hover\:bg-\[\#1193d4\]:hover {
+            background-color: #cccccc !important;
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:text-white:hover {
+            color: #000000 !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #000000 !important;
+        }
+        .high-contrast h1.text-white {
+            color: #000000 !important;
+        }
+        .hover-glow {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px 5px rgba(17, 147, 212, 0.4);
+        }
+        /* Стили для сворачиваемого блока */
+        details summary {
+            list-style: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        /* Стили для аккордеона */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 500px; /* Достаточно большое значение для раскрытия */
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]">
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+            <div class="flex items-center gap-8">
+                <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                    <span class="material-symbols-outlined text-3xl"> code </span>
+                    <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-white text-sm font-medium transition-colors" href="for-all.html" aria-current="page">Для педагогов, обучающихся и родителей</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="relative hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                </label>
+                <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> visibility </span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                    <span class="material-symbols-outlined"> menu </span>
+                </button>
+            </div>
+        </header>
+        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white text-xl font-medium transition-colors" href="for-all.html" aria-current="page">Для педагогов, обучающихся и родителей</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+        </nav>
+        <main class="flex-1">
+            <section class="relative flex min-h-[60vh] items-center justify-center py-20 md:min-h-screen">
+                <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2711&auto=format&fit=crop");'></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#111c22] via-[#111c22]/50 to-transparent"></div>
+                <div class="container relative z-10 mx-auto px-4 text-center sm:px-6 lg:px-8">
+                    <h1 class="text-4xl font-black tracking-tighter text-white sm:text-5xl md:text-7xl">Ресурсы для педагогов, обучающихся и родителей</h1>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">Откройте для себя мир знаний и инноваций в IT.</p>
+                    <div class="mt-10 flex flex-wrap justify-center gap-4">
+                        <a class="inline-flex h-12 items-center justify-center rounded-md bg-[#1193d4] px-8 text-base font-bold text-white shadow-lg shadow-[#1193d4]/20 transition-all hover:bg-opacity-90 hover:scale-105" href="#resources">Начать обзор</a>
+                        <a class="inline-flex h-12 items-center justify-center rounded-md border border-gray-600 bg-[#233c48] px-8 text-base font-bold text-white transition-all hover:border-gray-500 hover:bg-[#233c48] hover:scale-105" href="contacts.html">Связаться со мной</a>
+                    </div>
+                </div>
+            </section>
+            <div class="container mx-auto px-4 py-20 sm:px-6 lg:px-8" id="resources">
+                <div class="flex flex-wrap justify-between gap-4 p-4">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Ресурсы</h2>
+                        <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                            Изучите материалы, специально подготовленные для каждой категории пользователей.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 p-4">
+                    <section class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group" id="teachers">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined text-3xl">school</span>
+                            </div>
+                            <h2 class="text-white text-base font-bold leading-tight">Для педагогов</h2>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Получите доступ к методологическим материалам, планам уроков и инструментам для профессионального развития.</p>
+                        <div class="mt-auto">
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="for-teachers.html">Перейти</a>
+                        </div>
+                    </section>
+                    <section class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group" id="students">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                            </div>
+                            <h2 class="text-white text-base font-bold leading-tight">Для обучающихся</h2>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Найдите учебные материалы, интерактивные задания и дополнительные ресурсы для успешной учебы.</p>
+                        <div class="mt-auto">
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="for-students.html">Перейти</a>
+                        </div>
+                    </section>
+                    <section class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group" id="parents">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined text-3xl">diversity_3</span>
+                            </div>
+                            <h2 class="text-white text-base font-bold leading-tight">Для родителей</h2>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Ознакомьтесь с полезными советами, рекомендациями и ресурсами для поддержки образовательного процесса ребенка.</p>
+                        <div class="mt-auto">
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="for-parents.html">Перейти</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-32" id="faq">
+                <div class="flex flex-wrap justify-between gap-4 p-4">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Частые вопросы</h2>
+                        <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                            Ответы на самые популярные вопросы о моих курсах и методах обучения.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 p-4">
+                    <div class="flex flex-col gap-6 w-full md:w-1/2">
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Какие курсы вы предлагаете?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Я предлагаю курсы по веб-разработке, искусственному интеллекту, машинному обучению, видеомонтажу и PHP/WordPress.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Как проходит обучение?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Обучение проходит только в очном формате по расписанию. Мы сочетаем теорию с практическими занятиями, направленными на создание собственных проектов.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Сколько длится один курс?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Продолжительность большинства курсов составляет 72 академических часа (2 часа в неделю).
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Где можно посмотреть расписание занятий?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Актуальное расписание занятий доступно на официальном сайте нашей организации <a href="https://itcube-38.ru/schedule/" class="text-[#1193d4] hover:underline" target="_blank">IT-Cube</a>.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Где узнать, чем дети будут заниматься на курсе?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Подробную информацию о программе курса и занятиях можно получить у администрации центра.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-6 w-full md:w-1/2">
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Для какого возраста подходят ваши курсы?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Мои курсы предназначены для школьников среднего и старшего возраста, а также для взрослых, желающих освоить новые навыки в IT.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Нужны ли специальные знания для начала?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Для начальных курсов специальные знания не требуются. Мы начинаем с основ и постепенно переходим к сложным темам.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Выдаются ли сертификаты по окончании?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Да, по завершении курса и успешной сдаче итогового проекта выдается сертификат.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Обучение платное?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Нет, все курсы бесплатные. Запись осуществляется через систему «Навигатор», а в случае необходимости администрация может оказать помощь с этим процессом.
+                            </div>
+                        </div>
+                        <div class="accordion-item p-4 rounded-lg border border-[#325567] bg-[#192B33] cursor-pointer group">
+                            <div class="accordion-header flex justify-between items-center text-white font-bold text-lg">
+                                Как с вами связаться?
+                                <span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+                            </div>
+                            <div class="accordion-content mt-4 text-[#92b7c9] leading-relaxed">
+                                Вы можете связаться со мной через форму обратной связи на сайте или по электронной почте, указанной в разделе "Контакты".
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </main>
+        <footer class="border-t border-[#233c48]">
+            <div class="mx-auto max-w-[960px] px-5 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    document.getElementById('accessibility-btn').addEventListener('click', function() {
+        document.body.classList.toggle('high-contrast');
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('hidden');
+    });
+
+    mobileMenuCloseBtn.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+
+    // JavaScript для аккордеона
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.material-symbols-outlined');
+
+            // Закрыть все другие открытые блоки
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                if (item !== accordionItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-content').classList.remove('open');
+                    item.querySelector('.material-symbols-outlined').classList.remove('rotate-180');
+                }
+            });
+
+            // Переключить текущий блок
+            accordionItem.classList.toggle('active');
+            content.classList.toggle('open');
+            icon.classList.toggle('rotate-180');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700&family=Orbitron%3Awght%40700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Карта сайта</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        /* Стили для режима слабовидящих */
+        body.high-contrast {
+            background-color: #f8f9fa;
+            color: #111c22;
+        }
+        .high-contrast .header,
+        .high-contrast input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-center {
+            background-color: #f8f9fa !important;
+            border-color: #111c22 !important;
+        }
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined {
+            color: #111c22 !important;
+        }
+        .high-contrast .text-\[\#1193d4\] {
+            color: #007BFF !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #111c22 !important;
+        }
+        .high-contrast .hover\:text-white:hover,
+        .high-contrast .hover\:text-white:focus {
+            color: #111c22 !important;
+        }
+        .high-contrast .hover\:bg-\[\#0e7dbb\]:hover,
+        .high-contrast .hover\:bg-\[\#0e7dbb\]:focus {
+            background-color: #007BFF !important;
+        }
+        .high-contrast .hover\:bg-gray-500:hover,
+        .high-contrast .hover\:bg-gray-500:focus {
+            background-color: #D3D3D3 !important;
+        }
+        .high-contrast .group:hover .bg-\[\#1193d4\] {
+            background-color: #f8f9fa !important;
+        }
+        .high-contrast .group:hover .text-\[\#1193d4\] {
+            color: #111c22 !important;
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+            <div class="flex items-center gap-8">
+                <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                    <span class="material-symbols-outlined text-3xl"> code </span>
+                    <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="relative hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                </label>
+                <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> visibility </span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                    <span class="material-symbols-outlined"> menu </span>
+                </button>
+            </div>
+        </header>
+        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+        </nav>
+        <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1 mx-auto">
+                <div class="flex flex-wrap justify-between gap-4 p-4">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Карта сайта</h2>
+                        <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                            Полный список всех страниц и материалов, доступных на сайте.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <ul class="list-disc list-inside space-y-4 text-white text-lg">
+                        <li>
+                            <a class="text-[#1193d4] hover:text-white transition-colors" href="index.html">Главная</a>
+                        </li>
+                        <li>
+                            <a class="text-[#1193d4] hover:text-white transition-colors" href="about.html">Об авторе</a>
+                        </li>
+                        <li>
+                            <a class="text-[#1193d4] hover:text-white transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                        </li>
+                        <li>
+                            <a class="text-[#1193d4] hover:text-white transition-colors" href="materials.html">Материалы</a>
+                            <ul class="list-disc list-inside ml-8 space-y-2 text-sm mt-2">
+                                <li>
+                                    <a class="text-[#92b7c9] hover:text-white transition-colors" href="metod/metod_Web.docx" target="_blank">Методическая разработка: Веб разработка</a>
+                                </li>
+                                <li>
+                                    <a class="text-[#92b7c9] hover:text-white transition-colors" href="metod/metod_ai.docx" target="_blank">Методическая разработка: Искусственный интеллект</a>
+                                </li>
+                                <li>
+                                    <a class="text-[#92b7c9] hover:text-white transition-colors" href="metod/metod_ML.docx" target="_blank">Методическая разработка: Машинное обучение</a>
+                                </li>
+                                <li>
+                                    <a class="text-[#92b7c9] hover:text-white transition-colors" href="metod/metod_video.docx" target="_blank">Методическая разработка: Видеомонтаж</a>
+                                </li>
+                                <li>
+                                    <a class="text-[#92b7c9] hover:text-white transition-colors" href="metod/metod_PHP_WP.docx" target="_blank">Методическая разработка: PHP и WordPress</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="text-[#1193d4] hover:text-white transition-colors" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer class="border-t border-[#233c48]">
+            <div class="mx-auto max-w-[960px] px-5 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html" aria-current="page">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Скрипт для кнопки контраста
+        const accessibilityBtn = document.getElementById('accessibility-btn');
+        if (accessibilityBtn) {
+            accessibilityBtn.addEventListener('click', function() {
+                document.body.classList.toggle('high-contrast');
+            });
+        }
+
+        // Скрипт для мобильного меню
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileMenuBtn && mobileMenuCloseBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('hidden');
+            });
+            mobileMenuCloseBtn.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+            });
+        }
+    });
+</script>
+</body>
+</html>

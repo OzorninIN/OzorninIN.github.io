@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght@400;500;700;900&family=Space+Grotesk%3Awght@400;500;700&family=Orbitron%3Awght@700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Об авторе</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        /* Стили для режима слабовидящих (светлая тема) */
+        body.high-contrast {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        .high-contrast .header,
+        .high-contrast .search-box input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-\[\#4a5568\],
+        .high-contrast .bg-center,
+        .high-contrast button,
+        .high-contrast a.flex.min-w-\[84px\] {
+            background-color: #ffffff !important;
+            border-color: #000000 !important;
+            color: #000000 !important;
+        }
+        /* Тексты и иконки */
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .text-\[\#1193d4\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined,
+        .high-contrast .hover-glow {
+            color: #000000 !important;
+        }
+        /* Кнопки-спаны с навыками */
+        .high-contrast .bg-\[\#233c48\].text-\[\#92b7c9\] {
+            background-color: #e2e6ea !important;
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:bg-\[\#233c48\]:hover,
+        .high-contrast .hover\:bg-\[\#192b33\]:hover,
+        .high-contrast .hover\:bg-\[\#1193d4\]:hover {
+            background-color: #cccccc !important;
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:text-white:hover {
+            color: #000000 !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #000000 !important;
+        }
+        .high-contrast h1.text-white {
+            color: #000000 !important;
+        }
+        .hover-glow {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px 5px rgba(17, 147, 212, 0.4);
+        }
+        /* Стили для сворачиваемого блока */
+        #certificates-container.expanded {
+            max-height: none !important;
+        }
+        #certificates-container:not(.expanded) .certificate-overlay {
+            display: block;
+        }
+        #certificates-container.expanded .certificate-overlay {
+            display: none;
+        }
+        /* Новые стили для сертификатов */
+        .certificate-item {
+            transition: transform 0.3s ease-in-out;
+        }
+        .certificate-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+                <div class="flex items-center gap-8">
+                    <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                        <span class="material-symbols-outlined text-3xl"> code </span>
+                        <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
+                        <a class="text-white text-sm font-medium transition-colors" href="about.html" aria-current="page">Об авторе</a>
+                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                        <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <label class="relative hidden sm:block">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                        <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                    </label>
+                    <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined"> visibility </span>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                        <span class="material-symbols-outlined"> menu </span>
+                    </button>
+                </div>
+            </header>
+            <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+                <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-4xl">close</span>
+                </button>
+                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+                <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+            </nav>
+            <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <aside class="md:col-span-1 flex flex-col items-center text-center">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-full h-full border-4 border-[#1193d4] shadow-lg hover-glow" style='background-image: url("img/profile.jpg");'></div>
+                        </div>
+                        <h2 class="text-white text-3xl font-bold tracking-tight">Илья Николаевич Озорнин</h2>
+                        <p class="text-[#1193d4] text-lg mt-2 font-medium">Преподаватель "IT-Cube"</p>
+                        <div class="mt-4 text-[#8b949e] text-sm space-y-1">
+                            <p class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> г. Ангарск, Ленинградский проспект 13</p>
+                        </div>
+                    </aside>
+                    <section class="md:col-span-2">
+                        <div class="bg-[#192b33] border border-[#325567] rounded-lg p-8">
+                            <h3 class="text-white text-2xl font-bold mb-6 border-b border-[#325567] pb-4">Общая информация</h3>
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                    <p class="text-[#92b7c9] text-base font-semibold sm:col-span-1">Стаж работы</p>
+                                    <p class="text-white text-base sm:col-span-2">3 года 4 месяца</p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                    <p class="text-[#92b7c9] text-base font-semibold sm:col-span-1">Образование</p>
+                                    <p class="text-white text-base sm:col-span-2">Среднее специальное: Ангарский промышленно-экономический техникум, "Информационные системы и программирование"</p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                    <p class="text-[#92b7c9] text-base font-semibold sm:col-span-1">Квалификация</p>
+                                    <p class="text-white text-base sm:col-span-2">Администратор баз данных, Педагог дополнительного образования</p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                    <p class="text-[#92b7c9] text-base font-semibold sm:col-span-1">Достижения</p>
+                                    <div class="text-white text-base sm:col-span-2">
+                                        <div class="flex items-start gap-3">
+                                            <span class="material-symbols-outlined text-[#1193d4] mt-1">workspace_premium</span>
+                                            <p>Являюсь победителем региональных чемпионатов «Абилимпикс» в 2020 и 2021 году по компетенции «Разработка программного обеспечения». В 2021 году вошёл в топ-10 на национальном чемпионате России. В 2022 году стал победителем по компетенции «Администрирование баз данных». На конкурсе «WorldSkills Russia» в 2021 году занял 3 место, а в 2022 году – 2 место по компетенции «Веб-разработка и дизайн».</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                    <p class="text-[#92b7c9] text-base font-semibold sm:col-span-1">Направление</p>
+                                    <p class="text-white text-base sm:col-span-2">Веб-разработка и программирование</p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
+                                    <p class="text-[#92b7c9] text-base font-semibold sm:col-span-1">Ключевые навыки</p>
+                                    <div class="sm:col-span-2 flex flex-wrap gap-2">
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">HTML5</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">C#</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">Java</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">C++</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">Базы данных</span>
+                                        <span class="bg-[#233c48] text-[#92b7c9] text-xs font-semibold px-2.5 py-1 rounded-full">WordPress</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#192b33] border border-[#325567] rounded-lg p-8 mt-8">
+                            <h3 class="text-white text-2xl font-bold mb-6 border-b border-[#325567] pb-4">Обо мне</h3>
+                            <p class="text-white text-base">Имею специальное профессиональное образование по специальности "Информационные системы и технологии" квалификация "Администратор баз данных". Выступал на международной научно-практической конференции «Комплексное развитие территорий в условиях цифровой трансформации» и являюсь автором статьи "ОБ ОСОБЕННОСТЯХ ДЕЯТЕЛЬНОСТИ FULL-STACK WEB-РАЗРАБОТЧИКОВ".</p>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="mt-12">
+    <h2 class="text-white text-2xl font-bold tracking-tight px-4">Сертификаты и дипломы</h2>
+    <div id="certificates-container" class="relative mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-h-[500px] overflow-hidden transition-all duration-300">
+        <a href="certs/Сертификат_1.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_1.jpg" alt="Сертификат 1" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_2.png" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_2.png" alt="Сертификат 2" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_3.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_3.jpg" alt="Сертификат 3" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_4.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_4.jpg" alt="Сертификат 4" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_5.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_5.jpg" alt="Сертификат 5" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_6.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_6.jpg" alt="Сертификат 6" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_7.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_7.jpg" alt="Сертификат 7" class="w-full h-auto object-cover">
+        </a>
+        <a href="certs/Сертификат_8.jpg" target="_blank" class="block rounded-lg overflow-hidden border border-[#233c48] hover-glow certificate-item">
+            <img src="certs/Сертификат_8.jpg" alt="Сертификат 8" class="w-full h-auto object-cover">
+        </a>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#111c22] to-transparent pointer-events-none certificate-overlay"></div>
+    </div>
+    <div class="flex justify-center mt-6">
+        <button id="show-more-btn" class="flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors">
+            <span class="truncate">Показать все сертификаты</span>
+        </button>
+    </div>
+</section>
+                </main>
+            <footer class="border-t border-[#233c48]">
+                <div class="mx-auto max-w-[960px] px-5 py-8">
+                    <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                        <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                        <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html">Карта сайта</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accessibilityBtn = document.getElementById('accessibility-btn');
+            if (accessibilityBtn) {
+                accessibilityBtn.addEventListener('click', function() {
+                    document.body.classList.toggle('high-contrast');
+                });
+            }
+            // Скрипт для сворачиваемого блока
+            const certificatesContainer = document.getElementById('certificates-container');
+            const showMoreBtn = document.getElementById('show-more-btn');
+            const overlay = document.querySelector('.certificate-overlay');
+            if (certificatesContainer && showMoreBtn && overlay) {
+                const certificates = certificatesContainer.querySelectorAll('a.block');
+                // Проверяем, нужно ли показывать кнопку
+                if (certificates.length > 6) { // Если сертификатов больше, чем помещается на 2-3 ряда
+                    showMoreBtn.classList.remove('hidden');
+                } else {
+                    showMoreBtn.classList.add('hidden');
+                    certificatesContainer.style.maxHeight = 'none'; // Если мало, то скрывать не нужно
+                    overlay.style.display = 'none';
+                }
+                showMoreBtn.addEventListener('click', function() {
+                    if (certificatesContainer.classList.contains('expanded')) {
+                        certificatesContainer.classList.remove('expanded');
+                        this.querySelector('.truncate').textContent = 'Показать все сертификаты';
+                    } else {
+                        certificatesContainer.classList.add('expanded');
+                        this.querySelector('.truncate').textContent = 'Свернуть';
+                    }
+                });
+            }
+            // Скрипт для мобильного меню
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileMenuBtn && mobileMenuCloseBtn && mobileNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileNav.classList.remove('hidden');
+                });
+                mobileMenuCloseBtn.addEventListener('click', () => {
+                    mobileNav.classList.add('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Space+Grotesk%3Awght%40400%3B500%3B700&family=Orbitron%3Awght%40700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Материалы</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        /* Стили для режима слабовидящих */
+        body.high-contrast {
+            background-color: #f8f9fa;
+            color: #111c22;
+        }
+        .high-contrast .header,
+        .high-contrast input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-center {
+            background-color: #f8f9fa !important;
+            border-color: #111c22 !important;
+        }
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined {
+            color: #111c22 !important;
+        }
+        .high-contrast .text-\[\#1193d4\] {
+            color: #007BFF !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #111c22 !important;
+        }
+        .high-contrast .hover\:text-white:hover,
+        .high-contrast .hover\:text-white:focus {
+            color: #111c22 !important;
+        }
+        .high-contrast .hover\:bg-\[\#0e7dbb\]:hover,
+        .high-contrast .hover\:bg-\[\#0e7dbb\]:focus {
+            background-color: #007BFF !important;
+        }
+        .high-contrast .hover\:bg-gray-500:hover,
+        .high-contrast .hover\:bg-gray-500:focus {
+            background-color: #D3D3D3 !important;
+        }
+        .high-contrast .group:hover .bg-\[\#1193d4\] {
+            background-color: #f8f9fa !important;
+        }
+        .high-contrast .group:hover .text-\[\#1193d4\] {
+            color: #111c22 !important;
+        }
+        .high-contrast .correct-answer {
+            color: #4CAF50 !important;
+        }
+        .high-contrast .incorrect-answer {
+            color: #F44336 !important;
+        }
+        .correct-answer {
+            color: #4CAF50 !important;
+        }
+        .incorrect-answer {
+            color: #F44336 !important;
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+            <div class="flex items-center gap-8">
+                <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                    <span class="material-symbols-outlined text-3xl"> code </span>
+                    <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                    <a class="text-white text-sm font-medium transition-colors" href="materials.html" aria-current="page">Материалы</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="relative hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                </label>
+                <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> visibility </span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                    <span class="material-symbols-outlined"> menu </span>
+                </button>
+            </div>
+        </header>
+        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+        </nav>
+        <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1 mx-auto">
+                <div class="flex flex-wrap justify-between gap-4 p-4">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Мои курсы</h2>
+                        <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                            Авторские материалы по курсам дополнительного образования
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 p-4">
+                    <!-- КУРС: Веб разработка с нуля -->
+                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined">html</span>
+                            </div>
+                            <h4 class="text-white text-base font-bold leading-tight">Веб разработка с нуля</h4>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Комплексный курс по основам веб-разработки: от HTML и CSS до JavaScript.</p>
+                        <div class="mt-auto flex flex-col gap-2">
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29314-programma-veb-razrabotka-s-nulya-html-css-i-javascript">Записаться на курс</a>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_Web.docx" target="_blank">Методическая разработка</a>
+                        </div>
+                    </div>
+                    <!-- КУРС: Искусственный интеллект -->
+                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined">neurology</span>
+                            </div>
+                            <h4 class="text-white text-base font-bold leading-tight">Искусственный интеллект</h4>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Введение в мир ИИ: от теории до практических примеров и алгоритмов.</p>
+                        <div class="mt-auto flex flex-col gap-2">
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29315-programma-iskusstvennyi-intellekt-ot-chat-botov-do-neirosetei">Записаться на курс</a>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_ai.docx" target="_blank">Методическая разработка</a>
+                        </div>
+                    </div>
+                    <!-- КУРС: Машинное обучение -->
+                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined">model_training</span>
+                            </div>
+                            <h4 class="text-white text-base font-bold leading-tight">Машинное обучение</h4>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Погружение в алгоритмы машинного обучения и создание своих моделей.</p>
+                        <div class="mt-auto flex flex-col gap-2">
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29316-programma-prakticheskii-kurs-po-mashinnomu-obucheniyu-i-neirosetyam">Записаться на курс</a>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_ML.docx" target="_blank">Методическая разработка</a>
+                        </div>
+                    </div>
+                    <!-- КУРС: Видеомонтаж -->
+                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined">cut</span>
+                            </div>
+                            <h4 class="text-white text-base font-bold leading-tight">Видеомонтаж</h4>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Основы работы с видеоредакторами и создание качественного контента.</p>
+                        <div class="mt-auto flex flex-col gap-2">
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29312-programma-bazovyi-kurs-videomontazha-dlya-nachinayushchikh">Записаться на курс</a>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_video.docx" target="_blank">Методическая разработка</a>
+                        </div>
+                    </div>
+                    <!-- КУРС: PHP и WordPress -->
+                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined">php</span>
+                            </div>
+                            <h4 class="text-white text-base font-bold leading-tight">PHP и WordPress</h4>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Курс по созданию сайтов с использованием PHP и популярной CMS WordPress.</p>
+                        <div class="mt-auto flex flex-col gap-2">
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29303-programma-php-i-wordpress-razrabotka-saitov-pod-cms">Записаться на курс</a>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_PHP_WP.docx" target="_blank">Методическая разработка</a>
+                        </div>
+                    </div>
+                    <!-- КУРС: Скоро... -->
+                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined">rocket_launch</span>
+                            </div>
+                            <h4 class="text-white text-base font-bold leading-tight">Скоро...</h4>
+                        </div>
+                        <p class="text-[#92b7c9] text-sm">Мы готовим кое-что интересное! Следите за обновлениями.</p>
+                        <div class="mt-auto flex flex-col gap-2">
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="#">Следить за новостями</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-between gap-4 p-4 mt-12">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Проверьте себя</h2>
+                        <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                            Пройдите небольшой тест по основам веб-разработки
+                        </p>
+                    </div>
+                </div>
+                <div id="quiz-container" class="grid grid-cols-1 gap-6 p-4">
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4">
+                        <h4 class="text-white text-lg font-bold">1. Какой HTML-тег используется для создания маркированного списка?</h4>
+                        <div class="flex flex-col gap-2 text-[#92b7c9]">
+                            <label><input type="radio" name="question1" value="incorrect" class="mr-2">a) &lt;ol&gt;</label>
+                            <label><input type="radio" name="question1" value="correct" class="mr-2">b) &lt;ul&gt;</label>
+                            <label><input type="radio" name="question1" value="incorrect" class="mr-2">c) &lt;li&gt;</label>
+                            <label><input type="radio" name="question1" value="incorrect" class="mr-2">d) &lt;list&gt;</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4">
+                        <h4 class="text-white text-lg font-bold">2. Что является основным отличием между сильным и слабым искусственным интеллектом?</h4>
+                        <div class="flex flex-col gap-2 text-[#92b7c9]">
+                            <label><input type="radio" name="question2" value="incorrect" class="mr-2">a) Слабый ИИ может учиться на данных, а сильный - нет.</label>
+                            <label><input type="radio" name="question2" value="incorrect" class="mr-2">b) Слабый ИИ имеет сознание, а сильный - нет.</label>
+                            <label><input type="radio" name="question2" value="correct" class="mr-2">c) Слабый ИИ выполняет конкретную задачу, сильный ИИ способен к общему познанию и сознанию.</label>
+                            <label><input type="radio" name="question2" value="incorrect" class="mr-2">d) Сильный ИИ используется только в робототехнике, а слабый - в программном обеспечении.</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4">
+                        <h4 class="text-white text-lg font-bold">3. Какая из перечисленных задач является примером обучения без учителя (unsupervised learning)?</h4>
+                        <div class="flex flex-col gap-2 text-[#92b7c9]">
+                            <label><input type="radio" name="question3" value="incorrect" class="mr-2">a) Прогнозирование цен на недвижимость.</label>
+                            <label><input type="radio" name="question3" value="incorrect" class="mr-2">b) Классификация электронных писем как спам или не спам.</label>
+                            <label><input type="radio" name="question3" value="correct" class="mr-2">c) Группировка клиентов по покупательскому поведению.</label>
+                            <label><input type="radio" name="question3" value="incorrect" class="mr-2">d) Распознавание лиц на фотографиях.</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4">
+                        <h4 class="text-white text-lg font-bold">4. Что в видеомонтаже называют «таймлайном»?</h4>
+                        <div class="flex flex-col gap-2 text-[#92b7c9]">
+                            <label><input type="radio" name="question4" value="incorrect" class="mr-2">a) Панель с эффектами и переходами.</label>
+                            <label><input type="radio" name="question4" value="incorrect" class="mr-2">b) Область предварительного просмотра видео.</label>
+                            <label><input type="radio" name="question4" value="correct" class="mr-2">c) Основная рабочая область, где размещаются и редактируются видео- и аудиоклипы в хронологическом порядке.</label>
+                            <label><input type="radio" radio="radio" name="question4" value="incorrect" class="mr-2">d) Панель управления настройками экспорта видео.</label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4">
+                        <h4 class="text-white text-lg font-bold">5. Какую роль играет PHP в системе управления контентом WordPress?</h4>
+                        <div class="flex flex-col gap-2 text-[#92b7c9]">
+                            <label><input type="radio" name="question5" value="incorrect" class="mr-2">a) PHP отвечает за стилизацию и дизайн сайта.</label>
+                            <label><input type="radio" name="question5" value="incorrect" class="mr-2">b) PHP используется для создания интерактивных элементов на стороне клиента.</label>
+                            <label><input type="radio" name="question5" value="correct" class="mr-2">c) PHP выполняет логику сайта на сервере и взаимодействует с базой данных.</label>
+                            <label><input type="radio" name="question5" value="incorrect" class="mr-2">d) PHP используется для разметки структуры страниц.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 mt-6">
+                    <button id="submit-quiz" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">
+                        Проверить ответы
+                    </button>
+                    <div id="quiz-results" class="mt-4 text-white text-lg font-bold hidden"></div>
+                </div>
+            </div>
+        </main>
+        <footer class="border-t border-[#233c48]">
+            <div class="mx-auto max-w-[960px] px-5 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!-- Сообщение-уведомление -->
+<div id="requestMessage" class="fixed bottom-4 left-1/2 -translate-x-1/2 p-4 rounded-lg max-w-lg w-full text-white border border-[#325567] bg-[#192B33] shadow-lg flex items-center gap-4 hidden z-50">
+    <div class="flex-1">
+        <p class="text-sm">Для получения планов уроков и презентаций, пожалуйста, отправьте запрос. Мы предоставляем материалы индивидуально для каждого урока, чтобы обеспечить их актуальность и релевантность. Обратитесь ко мне в чате или через форму обратной связи.</p>
+    </div>
+    <a href="contacts.html" class="flex-shrink-0 whitespace-nowrap px-4 py-2 rounded-md bg-[#1193d4] hover:bg-[#0e7dbb] text-white text-sm font-bold transition-colors">
+        Перейти к контактам
+    </a>
+    <button id="closeMessageBtn" class="flex-shrink-0 text-[#92b7c9] hover:text-white transition-colors">
+        <span class="material-symbols-outlined">close</span>
+    </button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Скрипт для кнопки контраста
+        const accessibilityBtn = document.getElementById('accessibility-btn');
+        if (accessibilityBtn) {
+            accessibilityBtn.addEventListener('click', function() {
+                document.body.classList.toggle('high-contrast');
+            });
+        }
+
+        // Скрипт для мобильного меню
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileMenuBtn && mobileMenuCloseBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('hidden');
+            });
+            mobileMenuCloseBtn.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+            });
+        }
+
+        // Скрипт для квиза
+        const quizContainer = document.getElementById('quiz-container');
+        const submitBtn = document.getElementById('submit-quiz');
+        const resultsDiv = document.getElementById('quiz-results');
+
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = 5;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = `question${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.flex-col');
+                const allLabels = questionElement.querySelectorAll('label');
+                
+                allLabels.forEach(label => {
+                    label.classList.remove('correct-answer', 'incorrect-answer');
+                });
+                
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === 'correct') {
+                        score++;
+                        selectedAnswer.closest('label').classList.add('correct-answer');
+                    } else {
+                        selectedAnswer.closest('label').classList.add('incorrect-answer');
+                        const correctAnswer = questionElement.querySelector('input[value="correct"]').closest('label');
+                        if (correctAnswer) {
+                            correctAnswer.classList.add('correct-answer');
+                        }
+                    }
+                }
+            }
+
+            resultsDiv.innerHTML = `Ваш результат: ${score} из ${totalQuestions}.`;
+            resultsDiv.classList.remove('hidden');
+            submitBtn.style.display = 'none';
+
+            const resetButton = document.createElement('button');
+            resetButton.id = 'reset-quiz';
+            resetButton.className = 'flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full';
+            resetButton.textContent = 'Повторить тест';
+            submitBtn.parentNode.insertBefore(resetButton, submitBtn.nextSibling);
+            resetButton.addEventListener('click', resetQuiz);
+        }
+
+        function resetQuiz() {
+            const allLabels = quizContainer.querySelectorAll('label');
+            allLabels.forEach(label => {
+                label.classList.remove('correct-answer', 'incorrect-answer');
+                const input = label.querySelector('input');
+                if (input) {
+                    input.checked = false;
+                }
+            });
+            
+            resultsDiv.classList.add('hidden');
+            submitBtn.style.display = 'block';
+            const resetButton = document.getElementById('reset-quiz');
+            if (resetButton) {
+                resetButton.remove();
+            }
+        }
+
+        if (submitBtn) {
+            submitBtn.addEventListener('click', checkAnswers);
+        }
+
+        // Новая логика для показа сообщения
+        window.showRequestMessage = function() {
+            const messageBox = document.getElementById('requestMessage');
+            messageBox.classList.remove('hidden');
+        };
+
+        const closeMessageBtn = document.getElementById('closeMessageBtn');
+        if (closeMessageBtn) {
+            closeMessageBtn.addEventListener('click', () => {
+                document.getElementById('requestMessage').classList.add('hidden');
+            });
+        }
+    });
+</script>
+</body>
+</html>

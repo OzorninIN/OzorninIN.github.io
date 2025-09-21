@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght@400;500;700;900&family=Space+Grotesk%3Awght@400;500;700&family=Orbitron%3Awght@700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Главная</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        /* Затемняющий оверлей для баннера */
+        .overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Увеличиваем прозрачность затемнения, чтобы текст лучше читался */
+            background-color: rgba(0, 0, 0, 0.6); /* Было 0.4, стало 0.6 */
+            border-radius: 0.5rem;
+            pointer-events: none;
+        }
+
+        /* Убедитесь, что текст и другие элементы находятся поверх затемнения */
+        .overlay > * {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Стили для режима слабовидящих */
+        body.high-contrast {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        .high-contrast .header,
+        .high-contrast .search-box input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-\[\#4a5568\],
+        .high-contrast .bg-\[\#1193d4\] {
+            background-color: #ffffff !important;
+            border-color: #000000 !important;
+        }
+        
+        .high-contrast .bg-cover {
+            background-image: none !important;
+        }
+        .high-contrast .overlay::before {
+            background-color: transparent !important;
+        }
+        
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .text-\[\#1193d4\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined {
+            color: #000000 !important;
+        }
+        
+        .high-contrast button,
+        .high-contrast a.flex.min-w-\[84px\],
+        .high-contrast .form-radio {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
+        .high-contrast button .material-symbols-outlined,
+        .high-contrast button .truncate,
+        .high-contrast a.flex.min-w-\[84px\] .truncate {
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:bg-\[\#233c48\]:hover,
+        .high-contrast .hover\:bg-\[\#192b33\]:hover,
+        .high-contrast .hover\:bg-\[\#1193d4\]:hover {
+            background-color: #cccccc !important;
+        }
+        .high-contrast .hover\:text-white:hover {
+            color: #000000 !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #000000 !important;
+        }
+        #font-size-controls {
+            display: none;
+        }
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]">
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col text-base">
+        <header class="flex items-center justify-between whitespace-nowrap bg-[#111c22] border-b border-solid border-b-[#233c48] px-10 py-3">
+            <div class="flex items-center gap-8">
+                <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                    <span class="material-symbols-outlined text-3xl"> code </span>
+                    <h2 class="text-white text-xl font-bold tracking-tight brand-font">Озорнин И.Н.</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="relative hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                </label>
+                <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-[#92b7c9] hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> visibility </span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                    <span class="material-symbols-outlined"> menu </span>
+                </button>
+            </div>
+        </header>
+        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+        </nav>
+        <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+            <div class="mx-auto max-w-[960px]">
+                <section class="relative min-h-[480px] w-full rounded-lg bg-cover bg-center bg-no-repeat flex flex-col justify-end p-8 overlay" style='background-image: url("img/Main_banner.jpg");' role="img" aria-label="Фоновое изображение">
+                    <div class="relative z-10 max-w-2xl text-left">
+                        <h1 class="text-white text-4xl font-bold tracking-tight sm:text-5xl">Личный сайт преподавателя Озорнина Ильи Николаевича</h1>
+                        <p class="mt-4 text-lg text-white/90">
+                            Инновационные подходы в дополнительном IT-образовании. Материалы для педагогов, обучающихся и их родителей.
+                        </p>
+                        <button class="mt-6 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors">
+                            <span class="truncate">Узнать больше</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="mt-12">
+                    <h2 class="text-white text-2xl font-bold tracking-tight px-4">Обо мне в цифрах</h2>
+                    <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <div class="flex flex-col gap-4 rounded-lg bg-[#233c48] p-6 text-center">
+                            <h3 class="text-white text-4xl font-bold">2 раза</h3>
+                            <p class="text-[#92b7c9] text-lg font-normal">
+                                представлял Иркутскую область на региональных конкурсах
+                            </p>
+                            <p class="text-xs text-white/80">
+                                по веб-разработке и администрированию баз данных
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg bg-[#233c48] p-6 text-center">
+                            <h3 class="text-white text-4xl font-bold">21</h3>
+                            <p class="text-[#92b7c9] text-lg font-normal">
+                                выпущенная группа за 3 года работы
+                            </p>
+                            <p class="text-xs text-white/80">
+                                20 групп детей и 1 группа взрослых
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4 rounded-lg bg-[#233c48] p-6 text-center">
+                            <h3 class="text-white text-4xl font-bold">80%</h3>
+                            <p class="text-[#92b7c9] text-lg font-normal">
+                                выпускников продолжили обучение
+                            </p>
+                            <p class="text-xs text-white/80">
+                                в IT-направлении
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-12">
+                    <h2 class="text-white text-2xl font-bold tracking-tight px-4">Быстрый доступ</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+                        <a class="flex flex-col items-center justify-center gap-3 rounded-lg border border-[#233c48] bg-[#233c48] p-4 text-center hover:bg-[#192b33] transition-colors" href="about.html">
+                            <span class="material-symbols-outlined text-3xl text-white">person</span>
+                            <h3 class="text-white text-sm font-bold leading-tight">Об авторе</h3>
+                        </a>
+                        <a class="flex flex-col items-center justify-center gap-3 rounded-lg border border-[#233c48] bg-[#233c48] p-4 text-center hover:bg-[#192b33] transition-colors" href="for-all.html">
+                            <span class="material-symbols-outlined text-3xl text-white">groups</span>
+                            <h3 class="text-white text-sm font-bold leading-tight">Для педагогов, обучающихся и родителей</h3>
+                        </a>
+                        <a class="flex flex-col items-center justify-center gap-3 rounded-lg border border-[#233c48] bg-[#233c48] p-4 text-center hover:bg-[#192b33] transition-colors" href="materials.html">
+                            <span class="material-symbols-outlined text-3xl text-white">description</span>
+                            <h3 class="text-white text-sm font-bold leading-tight">Материалы</h3>
+                        </a>
+                        <a class="flex flex-col items-center justify-center gap-3 rounded-lg border border-[#233c48] bg-[#233c48] p-4 text-center hover:bg-[#192b33] transition-colors" href="contacts.html">
+                            <span class="material-symbols-outlined text-3xl text-white">mail</span>
+                            <h3 class="text-white text-sm font-bold leading-tight">Контакты</h3>
+                        </a>
+                    </div>
+                </section>
+                <section class="mt-12">
+                    <h2 class="text-white text-2xl font-bold tracking-tight px-4">Место работы</h2>
+                    <div class="mt-6 p-6 rounded-lg border border-[#233c48] bg-[#233c48] grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div>
+                            <p class="text-[#92b7c9] text-base font-bold mb-2">Как к нам добраться:</p>
+                            <p class="text-[#92b7c9] text-base font-normal mb-4">Наш офис находится по адресу: г. Ангарск, Ленинградский проспект 13.</p>
+                            <div class="w-full h-[400px]">
+                                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afe3eb50936a72f6475af0c154d36460711baa8d7b2e8ff15f9adccd0b25f6f54&amp;lang=ru_RU&amp;scroll=true"></script>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between h-full gap-4">
+                            <div class="space-y-4">
+                                <p class="text-[#92b7c9] text-base font-normal">
+                                    Я работаю преподавателем дополнительного образования, делюсь своими знаниями и опытом в области веб-разработки и программирования. Моя цель — помочь молодым талантам найти своё призвание в IT-сфере.
+                                </p>
+                                <p class="text-[#92b7c9] text-base font-normal">
+                                    В своей работе я использую современные технологии и индивидуальный подход к каждому ученику, чтобы сделать процесс обучения максимально эффективным. Мне важно ваше мнение о моих курсах, материалах и сайте, поэтому вы можете оставить свой отзыв ниже.
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-[#92b7c9] text-base font-normal mb-2">
+                                    но вы можете ознакомиться со всеми курсами которые мы предлагаем
+                                </p>
+                                <a href="https://р38.навигатор.дети/directivities?organizators=2035&_t=1758300620516" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors w-full">
+                                    <span class="truncate">Все курсы</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-12">
+                    <h2 class="text-white text-2xl font-bold tracking-tight px-4">Оставьте отзыв</h2>
+                    <div class="mt-6 p-6 rounded-lg border border-[#233c48] bg-[#233c48] text-left">
+                        <form id="feedbackForm" class="space-y-6">
+                            <div>
+                                <label class="text-[#92b7c9] text-base font-normal block mb-2" for="rating">Как бы вы оценили сайт в целом?</label>
+                                <div class="flex items-center space-x-4">
+                                    <label class="text-white">
+                                        <input type="radio" name="rating" value="Отлично" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Отлично
+                                    </label>
+                                    <label class="text-white">
+                                        <input type="radio" name="rating" value="Хорошо" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Хорошо
+                                    </label>
+                                    <label class="text-white">
+                                        <input type="radio" name="rating" value="Удовлетворительно" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Удовлетворительно
+                                    </label>
+                                    <label class="text-white">
+                                        <input type="radio" name="rating" value="Плохо" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Плохо
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-[#92b7c9] text-base font-normal block mb-2" for="usefulInfo">Какую информацию на сайте вы нашли наиболее полезной?</label>
+                                <textarea id="usefulInfo" rows="4" class="w-full rounded-md bg-[#111c22] text-white border border-[#325567] focus:outline-none focus:ring-2 focus:ring-[#1193d4]"></textarea>
+                            </div>
+                            <div>
+                                <label class="text-[#92b7c9] text-base font-normal block mb-2" for="navigation">Была ли навигация по сайту удобной?</label>
+                                <div class="flex items-center space-x-4">
+                                    <label class="text-white">
+                                        <input type="radio" name="navigation" value="Да" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Да
+                                    </label>
+                                    <label class="text-white">
+                                        <input type="radio" name="navigation" value="Нет" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Нет
+                                    </label>
+                                    <label class="text-white">
+                                        <input type="radio" name="navigation" value="Частично" class="form-radio text-[#1193d4] border-gray-600 bg-gray-700 focus:ring-[#1193d4] mr-1"> Частично
+                                    </label>
+                                </div>
+                            </div>
+                            <button id="submitButton" type="submit" class="w-full flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#4a5568] hover:bg-[#1193d4] text-white text-base font-bold transition-colors">
+                                <span class="truncate">Отправить отзыв</span>
+                            </button>
+                        </form>
+                        <div id="thankYouMessage" class="hidden text-center text-white text-lg font-bold p-10">
+                            Спасибо за то что поучаствовали в опросе
+                        </div>
+                        <div id="emptyMessage" class="hidden text-center text-red-400 text-sm font-normal p-4">
+                            Пожалуйста, заполните хотя бы одно поле.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="border-t border-[#233c48] mt-12">
+            <div class="mx-auto max-w-[960px] px-5 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    // Переключение режима слабовидящих
+    document.getElementById('accessibility-btn').addEventListener('click', function() {
+        document.body.classList.toggle('high-contrast');
+    });
+
+    // JavaScript для обработки формы
+    const form = document.getElementById('feedbackForm');
+    const submitButton = document.getElementById('submitButton');
+    const usefulInfo = document.getElementById('usefulInfo');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    const emptyMessage = document.getElementById('emptyMessage');
+
+    function checkFormValidity() {
+        const isRatingChecked = document.querySelector('input[name="rating"]:checked');
+        const isNavigationChecked = document.querySelector('input[name="navigation"]:checked');
+        const isUsefulInfoFilled = usefulInfo.value.trim() !== '';
+
+        return isRatingChecked || isNavigationChecked || isUsefulInfoFilled;
+    }
+
+    form.addEventListener('input', function() {
+        if (checkFormValidity()) {
+            submitButton.classList.remove('bg-[#4a5568]', 'cursor-not-allowed', 'opacity-50');
+            submitButton.classList.add('bg-[#1193d4]', 'hover:bg-[#233c48]', 'cursor-pointer');
+        } else {
+            submitButton.classList.remove('bg-[#1193d4]', 'hover:bg-[#233c48]', 'cursor-pointer');
+            submitButton.classList.add('bg-[#4a5568]', 'cursor-not-allowed', 'opacity-50');
+        }
+    });
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+        if (checkFormValidity()) {
+            form.classList.add('hidden'); // Скрываем форму
+            thankYouMessage.classList.remove('hidden'); // Показываем сообщение
+            emptyMessage.classList.add('hidden'); // Скрываем сообщение об ошибке, если оно было
+        } else {
+            emptyMessage.classList.remove('hidden'); // Показываем сообщение об ошибке
+            thankYouMessage.classList.add('hidden'); // Скрываем сообщение с благодарностью
+        }
+    });
+</script>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('hidden');
+    });
+
+    mobileMenuCloseBtn.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+</script>
+</body>
+</html>

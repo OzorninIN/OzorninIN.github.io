@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght@400;500;700;900&family=Space+Grotesk:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Для обучающихся</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        /* Стили для режима слабовидящих */
+        body.high-contrast {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        .high-contrast .header,
+        .high-contrast .search-box input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-\[\#4a5568\],
+        .high-contrast .bg-center,
+        .high-contrast button,
+        .high-contrast a.flex.min-w-\[84px\] {
+            background-color: #ffffff !important;
+            border-color: #000000 !important;
+            color: #000000 !important;
+        }
+        /* Тексты и иконки */
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .text-\[\#1193d4\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined,
+        .high-contrast .hover-glow {
+            color: #000000 !important;
+        }
+        /* Кнопки-спаны с навыками */
+        .high-contrast .bg-\[\#233c48\].text-\[\#92b7c9\] {
+            background-color: #e2e6ea !important;
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:bg-\[\#233c48\]:hover,
+        .high-contrast .hover\:bg-\[\#192b33\]:hover,
+        .high-contrast .hover\:bg-\[\#1193d4\]:hover {
+            background-color: #cccccc !important;
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:text-white:hover {
+            color: #000000 !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #000000 !important;
+        }
+        .high-contrast h1.text-white {
+            color: #000000 !important;
+        }
+        .hover-glow {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px 5px rgba(17, 147, 212, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]">
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+            <div class="flex items-center gap-8">
+                <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                    <span class="material-symbols-outlined text-3xl"> code </span>
+                    <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-white text-sm font-medium transition-colors" href="for-all.html" aria-current="page">Для педагогов, обучающихся и родителей</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                    <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="relative hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                </label>
+                <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> visibility </span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors md:hidden">
+                    <span class="material-symbols-outlined"> menu </span>
+                </button>
+            </div>
+        </header>
+
+        <nav id="mobile-nav" class="hidden md:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white text-xl font-medium transition-colors" href="for-all.html" aria-current="page">Для педагогов, обучающихся и родителей</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+        </nav>
+
+        <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1 mx-auto">
+                <div class="flex flex-col gap-6 p-4">
+                    <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Для обучающихся</h2>
+                    <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                        Добро пожаловать в мир, где ты можешь создавать, а не только потреблять!
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-6">
+                        <h3 class="text-white text-2xl font-bold">Почему стоит выбрать мои курсы?</h3>
+                        <ul class="list-disc list-inside text-[#92b7c9] space-y-2">
+                            <li><span class="text-[#1193d4]">Создавай, а не просто смотри.</span> Ты научишься делать свои сайты, игры, видео и программы.</li>
+                            <li><span class="text-[#1193d4]">Крутые проекты.</span> Я учу на практике, создавая реальные и интересные проекты, которыми ты сможешь гордиться.</li>
+                            <li><span class="text-[#1193d4]">Побеждай.</span> Я — призёр крутых IT-соревнований, и знаю, как подготовить тебя к победам!</li>
+                            <li><span class="text-[#1193d4]">Прокачивай скиллы.</span> На моих курсах ты научишься работать в команде, решать сложные задачи и мыслить как настоящий разработчик.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-6">
+                        <h3 class="text-white text-2xl font-bold">Обо мне</h3>
+                        <p class="text-[#92b7c9]">
+                            Я — опытный преподаватель с профессиональным образованием в сфере информационных технологий. Я являюсь победителем 3 регионального чемпионата «Абилимпикс» в компетенции «Разработка программного обеспечения», участником 5 национального чемпионата «Абилимпикс» и призёром региональных чемпионатов «WorldSkills Russia» в 2021 и 2022г., что подтверждает мою высокую квалификацию и практические навыки.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-6 p-4 mt-8">
+                    <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Полезные ссылки для обучающихся</h2>
+                    <p class="text-[#92b7c9] text-base font-normal leading-normal">
+                        Ресурсы, которые помогут тебе развиваться и учиться в IT.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-6 group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined text-3xl">school</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">Онлайн-курсы по программированию</h3>
+                        </div>
+                        <p class="text-[#92b7c9]">
+                            Платформа с бесплатными уроками по веб-разработке, науке о данных и другим IT-направлениям.
+                        </p>
+                        <div class="mt-auto">
+                            <a class="flex items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity w-full" href="https://www.freecodecamp.org/" target="_blank">
+                                <span class="material-symbols-outlined">link</span>
+                                <span>Перейти на сайт</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-6 group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined text-3xl">emoji_events</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">IT-конкурсы и чемпионаты</h3>
+                        </div>
+                        <p class="text-[#92b7c9]">
+                            Узнай о соревнованиях, в которых можешь участвовать, чтобы продемонстрировать свои навыки.
+                        </p>
+                        <div class="mt-auto">
+                            <a class="flex items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity w-full" href="https://worldskills.ru/" target="_blank">
+                                <span class="material-symbols-outlined">link</span>
+                                <span>Узнать больше</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-6 group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
+                                <span class="material-symbols-outlined text-3xl">calendar_month</span>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">Расписание занятий</h3>
+                        </div>
+                        <p class="text-[#92b7c9]">
+                            Перейди на официальный сайт IT-Cube, чтобы найти расписание и информацию о курсах.
+                        </p>
+                        <div class="mt-auto">
+                            <a class="flex items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity w-full" href="https://itcube-38.ru/schedule/" target="_blank">
+                                <span class="material-symbols-outlined">link</span>
+                                <span>Посмотреть расписание</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+                    <a class="flex items-center justify-center gap-2 rounded-md h-12 px-6 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity flex-1 max-w-sm" href="materials.html">
+                        <span class="material-symbols-outlined">description</span>
+                        <span>Полезные материалы</span>
+                    </a>
+                    <a class="flex items-center justify-center gap-2 rounded-md h-12 px-6 bg-transparent text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#192b33] transition-colors flex-1 border border-[#325567] max-w-sm" href="contacts.html">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span>Задать вопрос</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer class="border-t border-[#233c48]">
+            <div class="mx-auto max-w-[960px] px-5 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    document.getElementById('accessibility-btn').addEventListener('click', function() {
+        document.body.classList.toggle('high-contrast');
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('hidden');
+    });
+
+    mobileMenuCloseBtn.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+</script>
+</body>
+</html>
