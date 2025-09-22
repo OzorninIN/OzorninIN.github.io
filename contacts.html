@@ -8,6 +8,7 @@
     <title>Озорнин И.Н. - Контакты</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ99u3uSg3j7xP9qf35A0K+dK6V+q8c0sT0v2lH4A3pTfM1sE4P2t4g5V0a2Lw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Стили для режима слабовидящих */
         body.high-contrast {
@@ -34,12 +35,14 @@
         .high-contrast .material-symbols-outlined {
             color: #000000 !important;
         }
+        /* Добавлено: стили для иконок Font Awesome в режиме высокой контрастности */
+        .high-contrast .fa-brands,
         .high-contrast button,
         .high-contrast a.flex.min-w-\[84px\],
-        .high-contrast .form-radio {
-            background-color: #ffffff !important;
+        .high-contrast .form-radio,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .fa-brands {
             color: #000000 !important;
-            border-color: #000000 !important;
         }
         .high-contrast button .material-symbols-outlined,
         .high-contrast button .truncate,
@@ -141,7 +144,7 @@
                                 <ul class="space-y-2">
                                     <li class="flex items-center gap-2 text-white">
                                         <span class="material-symbols-outlined">mail</span>
-                                        <span class="text-[#92b7c9]">ozornin-ilya@yandex.ru</span>
+                                        <span class="text-[#92b7c9]">bkmzjpjhyby@yandex.ru</span>
                                     </li>
                                     <li class="flex items-center gap-2 text-white">
                                         <span class="material-symbols-outlined">phone</span>
@@ -156,18 +159,12 @@
                             <div class="bg-[#233c48] rounded-lg p-6 space-y-4">
                                 <h3 class="text-white text-xl font-bold">Социальные сети</h3>
                                 <div class="flex flex-wrap gap-4">
-                                    <a class="flex items-center gap-2 text-[#92b7c9] hover:text-white transition-colors" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M21.5 12c0 5.25-4.5 9.5-9.5 9.5S2.5 17.25 2.5 12 7 2.5 12 2.5s9.5 4.25 9.5 9.5zM12 4.5c-4.14 0-7.5 3.14-7.5 7S7.86 19.5 12 19.5s7.5-3.14 7.5-7-3.36-7-7.5-7z"/>
-                                            <path d="M12 7.75c-2.3 0-4.18 1.96-4.18 4.25s1.88 4.25 4.18 4.25 4.18-1.96 4.18-4.25-1.88-4.25-4.18-4.25zM12 14c-1.24 0-2.25-.97-2.25-2.25S10.76 9.5 12 9.5s2.25.97 2.25 2.25-1.01 2.25-2.25 2.25z"/>
-                                        </svg>
+                                    <a class="flex items-center gap-2 text-[#92b7c9] hover:text-white transition-colors" href="https://vk.com/i19696">
+                                        <i class="fa-brands fa-vk text-xl"></i>
                                         <span>ВКонтакте</span>
                                     </a>
-                                    <a class="flex items-center gap-2 text-[#92b7c9] hover:text-white transition-colors" href="#">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M22.5 12c0 5.25-4.5 9.5-9.5 9.5S3.5 17.25 3.5 12 8 2.5 13 2.5s9.5 4.25 9.5 9.5zM13 4.5c-4.14 0-7.5 3.14-7.5 7S8.86 19.5 13 19.5s7.5-3.14 7.5-7-3.36-7-7.5-7z"/>
-                                            <path d="M13 7.75c-2.3 0-4.18 1.96-4.18 4.25s1.88 4.25 4.18 4.25 4.18-1.96 4.18-4.25-1.88-4.25-4.18-4.25zM13 14c-1.24 0-2.25-.97-2.25-2.25S11.76 9.5 13 9.5s2.25.97 2.25 2.25-1.01 2.25-2.25 2.25z"/>
-                                        </svg>
+                                    <a class="flex items-center gap-2 text-[#92b7c9] hover:text-white transition-colors" href="https://t.me/OINTG">
+                                        <i class="fa-brands fa-telegram text-xl"></i>
                                         <span>Telegram</span>
                                     </a>
                                 </div>
@@ -192,12 +189,6 @@
                                     <span class="truncate">Отправить</span>
                                 </button>
                             </form>
-                            <div class="mt-8 text-center">
-                                <p class="text-[#92b7c9] text-base mb-2">Или воспользуйтесь онлайн-чатом:</p>
-                                <a id="tawk-chat-link" href="#" class="w-full flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors">
-                                    <span class="truncate">Открыть чат</span>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
