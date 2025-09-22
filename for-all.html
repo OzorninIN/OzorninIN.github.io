@@ -141,6 +141,9 @@ body.high-contrast {
         .rotate-180 {
             transform: rotate(180deg);
         }
+        .high-contrast #main-title {
+    color: #ffffff !important;
+}
     </style>
 </head>
 <body class="bg-[#111c22]">
@@ -188,10 +191,10 @@ body.high-contrast {
                 <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2711&auto=format&fit=crop");'></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#111c22] via-[#111c22]/50 to-transparent"></div>
                 <div class="container relative z-10 mx-auto px-4 text-center sm:px-6 lg:px-8">
-                    <h1 class="text-4xl font-black tracking-tighter text-white sm:text-5xl desktop:text-7xl">Ресурсы для педагогов, обучающихся и родителей</h1>
-                    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 desktop:text-xl">Откройте для себя мир знаний и инноваций в IT.</p>
+                    <h1 id="main-title" class="text-4xl font-black tracking-tighter text-white sm:text-5xl desktop:text-7xl high-contrast-white">Ресурсы для педагогов, обучающихся и родителей</h1>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-300 desktop:text-xl ">Откройте для себя мир знаний и инноваций в IT.</p>
                     <div class="mt-10 flex flex-wrap justify-center gap-4">
-                        <a class="inline-flex h-12 items-center justify-center rounded-md bg-[#1193d4] px-8 text-base font-bold text-white shadow-lg shadow-[#1193d4]/20 transition-all hover:bg-opacity-90 hover:scale-105" href="#resources">Начать обзор</a>
+                        <a class="inline-flex h-12 items-center justify-center rounded-md bg-[#1193d4] px-8 text-base font-bold text-white  transition-all hover:bg-opacity-90 hover:scale-105" href="#resources">Начать обзор</a>
                         <a class="inline-flex h-12 items-center justify-center rounded-md border border-gray-600 bg-[#233c48] px-8 text-base font-bold text-white transition-all hover:border-gray-500 hover:bg-[#233c48] hover:scale-105" href="contacts.html">Связаться со мной</a>
                     </div>
                 </div>
