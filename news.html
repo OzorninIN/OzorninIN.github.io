@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght@400;500;700;900&family=Space+Grotesk%3Awght@400;500;700&family=Orbitron%3Awght@700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Озорнин И.Н. - Новости</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        /* Затемняющий оверлей для баннера */
+        .overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 0.5rem;
+            pointer-events: none;
+        }
+
+        /* Убедитесь, что текст и другие элементы находятся поверх затемнения */
+        .overlay > * {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Стили для режима слабовидящих */
+        body.high-contrast {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        .high-contrast .header,
+        .high-contrast .search-box input,
+        .high-contrast .footer,
+        .high-contrast .rounded-lg,
+        .high-contrast .bg-\[\#111c22\],
+        .high-contrast .bg-\[\#233c48\],
+        .high-contrast .bg-\[\#192b33\],
+        .high-contrast .bg-\[\#4a5568\],
+        .high-contrast .bg-\[\#1193d4\] {
+            background-color: #ffffff !important;
+            border-color: #000000 !important;
+        }
+        .high-contrast .bg-cover {
+            background-image: none !important;
+        }
+        .high-contrast .overlay::before {
+            background-color: transparent !important;
+        }
+        .high-contrast .text-white,
+        .high-contrast .text-white\/80,
+        .high-contrast .text-\[\#92b7c9\],
+        .high-contrast .text-\[\#1193d4\],
+        .high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+        .high-contrast .material-symbols-outlined {
+            color: #000000 !important;
+        }
+        .high-contrast button,
+        .high-contrast a.flex.min-w-\[84px\],
+        .high-contrast .form-radio {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
+        .high-contrast button .material-symbols-outlined,
+        .high-contrast button .truncate,
+        .high-contrast a.flex.min-w-\[84px\] .truncate {
+            color: #000000 !important;
+        }
+        .high-contrast .hover\:bg-\[\#233c48\]:hover,
+        .high-contrast .hover\:bg-\[\#192b33\]:hover,
+        .high-contrast .hover\:bg-\[\#1193d4\]:hover {
+            background-color: #cccccc !important;
+        }
+        .high-contrast .hover\:text-white:hover {
+            color: #000000 !important;
+        }
+        .high-contrast .border-\[\#233c48\],
+        .high-contrast .border-\[\#325567\] {
+            border-color: #000000 !important;
+        }
+        #font-size-controls {
+            display: none;
+        }
+        .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Пользовательские медиазапросы для переключения на 1140px */
+        /* Показываем навигацию и скрываем кнопку-бургер на больших экранах */
+        @media (min-width: 1141px) {
+            #desktop-nav {
+                display: flex !important;
+            }
+            #mobile-menu-btn {
+                display: none !important;
+            }
+        }
+        /* Скрываем навигацию и показываем кнопку-бургер на маленьких экранах */
+        @media (max-width: 1140px) {
+            #desktop-nav {
+                display: none !important;
+            }
+            #mobile-menu-btn {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#111c22]">
+<div class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col text-base">
+        <header class="flex items-center justify-between whitespace-nowrap bg-[#111c22] border-b border-solid border-b-[#233c48] px-10 py-3">
+            <div class="flex items-center gap-8">
+                <a class="flex items-center gap-3 text-[#1193d4] hover:text-white transition-colors" href="index.html">
+                    <span class="material-symbols-outlined text-3xl"> code </span>
+                    <h2 class="text-white text-xl font-bold tracking-tight brand-font">Озорнин И.Н.</h2>
+                </a>
+                <nav id="desktop-nav" class="items-center gap-6">
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="news.html">Новости</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="relative hidden sm:block">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                </label>
+                <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-[#92b7c9] hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> visibility </span>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined"> menu </span>
+                </button>
+            </div>
+        </header>
+        <nav id="mobile-nav" class="hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
+            <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="news.html">Новости</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
+        </nav>
+        <main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-8">
+            <div class="mx-auto max-w-[960px]">
+                <h1 class="text-white text-3xl font-bold tracking-tight mb-8">Новости</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Новый учебный год: готовимся к новым вершинам</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">01 Сентября, 2025</p>
+                        <p class="text-white/80 text-base">Завершился первый год моего проекта, и я невероятно горд достигнутыми результатами. Впереди новый учебный год, новые ученики и новые цели. Я готов к новым вызовам и с нетерпением жду, что принесет этот год!</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Сотрудничество с бизнесом: разработка реальных проектов</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">17 Августа, 2025</p>
+                        <p class="text-white/80 text-base">Мои ученики теперь работают над реальными проектами для бизнеса. Это дает им бесценный опыт и помогает быстрее адаптироваться к требованиям рынка труда. Такое сотрудничество — ключ к их успешному будущему.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Участие в форуме: выступаю с докладом</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">03 Августа, 2025</p>
+                        <p class="text-white/80 text-base">У меня была возможность выступить на крупном IT-форуме с докладом о будущем образования. Я поделился своими взглядами и представил свой проект. Получил много позитивных отзывов и предложений о сотрудничестве. Это был очень вдохновляющий опыт.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Новые дисциплины: расширяем программу обучения</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">20 Июля, 2025</p>
+                        <p class="text-white/80 text-base">С осени в мою программу будут включены новые дисциплины: машинное обучение, анализ данных и основы блокчейна. Это позволит ученикам получить еще более глубокие и актуальные знания, которые востребованы на рынке.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Образовательные тренды: что будет в тренде в ближайшем будущем?</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">06 Июля, 2025</p>
+                        <p class="text-white/80 text-base">Провел анализ будущих трендов в образовании. В ближайшие годы ключевыми станут индивидуальный подход, адаптивное обучение и углубленное изучение искусственного интеллекта. Я уже начинаю внедрять эти подходы в свои программы.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Наши выпускники: успешные карьеры после обучения</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">22 Июня, 2025</p>
+                        <p class="text-white/80 text-base">Горжусь своими выпускниками! Многие из них уже успешно работают в ведущих IT-компаниях, продолжают обучение в престижных университетах и достигают своих целей. Их успехи — лучшее доказательство качества моей работы.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Летняя школа IT: анонс нового сезона</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">08 Июня, 2025</p>
+                        <p class="text-white/80 text-base">С радостью объявляю о старте регистрации в летнюю IT-школу! Этим летом мы сосредоточимся на самых актуальных направлениях и углубим наши знания в практических проектах. Присоединяйтесь!</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Международное признание: наша методика признана на мировом уровне</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">25 Мая, 2025</p>
+                        <p class="text-white/80 text-base">Моя образовательная методика получила международное признание! Это невероятно важный шаг для меня и для всего проекта. Это доказывает, что наши подходы и усилия действительно дают результат.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Разработка учебных материалов: учебники нового поколения</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">11 Мая, 2025</p>
+                        <p class="text-white/80 text-base">Активно работаю над созданием уникальных учебных материалов. Моя цель — сделать их максимально интерактивными, чтобы процесс обучения был не только полезным, но и увлекательным.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Итоги года: анализируем наши успехи</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">27 Апреля, 2025</p>
+                        <p class="text-white/80 text-base">Подошло время подвести промежуточные итоги. Мы проделали огромную работу и достигли многих целей. Я благодарен каждому, кто вносит свой вклад в наш общий успех.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Победы учеников: наша команда снова лучшая!</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">13 Апреля, 2025</p>
+                        <p class="text-white/80 text-base">Мои ученики вновь доказали свой высокий уровень, одержав победу на всероссийском IT-соревновании. Это наша общая победа и еще одно подтверждение эффективности наших методик.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Новые возможности: запускаю блог о технологиях</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">30 Марта, 2025</p>
+                        <p class="text-white/80 text-base">В моем новом блоге я буду делиться полезными материалами, обзорами новинок и советами по обучению. Приглашаю всех присоединиться и следить за обновлениями!</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Экспертное мнение: участие в конференции по ИИ</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">16 Марта, 2025</p>
+                        <p class="text-white/80 text-base">Недавно я принял участие в крупной конференции, посвященной искусственному интеллекту. Я выступил с докладом и обсудил с коллегами перспективы использования ИИ в образовании. Это был очень продуктивный опыт, который вдохновил меня на новые идеи.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Открытый вебинар: как стать успешным IT-специалистом</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">02 Марта, 2025</p>
+                        <p class="text-white/80 text-base">Приглашаю всех на мой открытый вебинар, где я поделюсь секретами построения успешной карьеры в IT-сфере. Мы обсудим самые востребованные навыки, актуальные тренды и эффективные стратегии для профессионального роста.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Награды и признание: получаю грант за свой проект</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">16 Февраля, 2025</p>
+                        <p class="text-white/80 text-base">Рад поделиться новостью о получении гранта на развитие своего образовательного проекта. Это не только финансовая поддержка, но и признание важности моей работы. Грант поможет мне реализовать все задуманное.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Разработка курса: готовимся к новому набору учеников</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">02 Февраля, 2025</p>
+                        <p class="text-white/80 text-base">Активно работаю над созданием нового учебного курса. Я учитываю все пожелания, чтобы программа была максимально полезной и интересной для новичков и тех, кто хочет углубить свои знания.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Новые партнеры: расширяем горизонты сотрудничества</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">19 Января, 2025</p>
+                        <p class="text-white/80 text-base">Мы заключили партнерское соглашение с крупной IT-компанией. Это открывает для моих учеников новые возможности, включая стажировки и доступ к передовым технологиям. Наше сотрудничество будет способствовать профессиональному росту.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Мои публикации: статья в научном журнале</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">05 Января, 2025</p>
+                        <p class="text-white/80 text-base">С гордостью сообщаю, что моя первая научная статья опубликована в авторитетном журнале! Это результат долгих исследований и работы над методиками преподавания. Надеюсь, моя работа принесет пользу научному сообществу.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Новогодние итоги: самые яркие моменты уходящего года</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">22 Декабря, 2024</p>
+                        <p class="text-white/80 text-base">В преддверии Нового года я подвожу итоги. Этот год был полон важных событий: от запуска моего проекта до побед учеников на конкурсах. Я благодарен всем, кто был со мной в этом пути, и с нетерпением жду новых свершений в новом году.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Обратная связь: улучшаем программу вместе с учениками</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">08 Декабря, 2024</p>
+                        <p class="text-white/80 text-base">Я всегда прислушиваюсь к мнению своих учеников. Недавно мы провели опрос, чтобы понять, как можно улучшить программу. Полученная обратная связь уже помогает мне вносить важные коррективы и делать обучение еще более интересным и полезным.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Успехи в программировании: достижения на международной арене</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">24 Ноября, 2024</p>
+                        <p class="text-white/80 text-base">Мои ученики покорили новую вершину, заняв призовые места на международной олимпиаде по программированию. Их результаты доказывают, что с усердием и правильным наставничеством можно добиться успеха на любом уровне. Я горжусь ими!</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Новый проект: разработка образовательной платформы</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">10 Ноября, 2024</p>
+                        <p class="text-white/80 text-base">В этом месяце я приступил к разработке собственной образовательной платформы. Она будет объединять интерактивные уроки, практические задания и систему обратной связи. Моя цель — создать удобную и эффективную среду для обучения.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Мои ученики — моя гордость: победа на региональном конкурсе</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">27 Октября, 2024</p>
+                        <p class="text-white/80 text-base">Невероятные новости! Команда моих учеников заняла первое место на региональном конкурсе по робототехнике. Я очень горжусь их упорством, талантом и способностью работать в команде. Эта победа — результат их трудолюбия и нашего совместного труда.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Открытый урок: делюсь своим опытом с коллегами</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">13 Октября, 2024</p>
+                        <p class="text-white/80 text-base">Сегодня я провел открытый урок для коллег-педагогов. Мы обсудили современные методики преподавания информатики и обменялись опытом. Убежден, что только совместными усилиями мы сможем сделать образование лучше и доступнее для всех.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Внедрение инноваций: новые технологии в образовании</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">29 Сентября, 2024</p>
+                        <p class="text-white/80 text-base">Чтобы сделать обучение еще эффективнее, я внедряю новые IT-решения и интерактивные инструменты. Наша учебная программа постоянно обновляется, чтобы соответствовать самым актуальным требованиям рынка. Это позволяет ученикам быть на шаг впереди.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Первые успехи учеников: маленькие победы на большом пути</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">15 Сентября, 2024</p>
+                        <p class="text-white/80 text-base">Мои первые ученики уже демонстрируют отличные результаты. Видеть их энтузиазм и успехи — лучшая мотивация для меня. Мы вместе осваиваем основы программирования и создаем первые проекты. Это только начало, но уже сейчас их прогресс впечатляет.</p>
+                    </div>
+                    <div class="rounded-lg bg-[#233c48] p-6">
+                        <h2 class="text-white text-xl font-bold mb-2">Начинаю свой путь: первый шаг к успеху</h2>
+                        <p class="text-[#92b7c9] text-sm mb-4">01 Сентября, 2024</p>
+                        <p class="text-white/80 text-base">Сегодня я с радостью объявляю о начале своего нового образовательного проекта. Я полон решимости и энергии, чтобы поделиться своими знаниями и опытом, помочь каждому, кто хочет освоить мир технологий и программирования. Впереди много работы и захватывающих моментов!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="border-t border-[#233c48]">
+            <div class="mx-auto max-w-[960px] px-5 py-8">
+                <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                    <p class="text-[#92b7c9] text-sm">© 2024 Озорнин Илья Николаевич. Все права защищены.</p>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="sitemap.html">Карта сайта</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('hidden');
+    });
+
+    mobileMenuCloseBtn.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+
+    // JavaScript для режима слабовидящих
+    const accessibilityBtn = document.getElementById('accessibility-btn');
+    const body = document.body;
+
+    accessibilityBtn.addEventListener('click', () => {
+        body.classList.toggle('high-contrast');
+    });
+</script>
+</body>
+</html>

@@ -127,6 +127,7 @@
                 </a>
                 <nav id="desktop-nav" class="items-center gap-6">
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="about.html">Об авторе</a>
+                    <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="news.html">Новости</a>
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="materials.html">Материалы</a>
                     <a class="text-[#92b7c9] hover:text-white text-sm font-medium transition-colors" href="contacts.html">Контакты</a>
@@ -135,7 +136,7 @@
             <div class="flex items-center gap-4">
                 <label class="relative hidden sm:block">
                     <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
-                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
+                    <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text">
                 </label>
                 <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-[#92b7c9] hover:text-white transition-colors">
                     <span class="material-symbols-outlined"> visibility </span>
@@ -151,6 +152,7 @@
             </button>
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="index.html">Главная</a>
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="about.html">Об авторе</a>
+            <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="news.html">Новости</a>
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="for-all.html">Для педагогов, обучающихся и родителей</a>
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="materials.html">Материалы</a>
             <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
@@ -370,6 +372,33 @@
     mobileMenuCloseBtn.addEventListener('click', () => {
         mobileNav.classList.add('hidden');
     });
+    // Получаем поле поиска
+const searchInput = document.getElementById('searchInput');
+
+// Получаем все секции, которые нужно искать
+// Вы можете добавить другие селекторы, если хотите искать в других элементах
+const searchableSections = document.querySelectorAll('section'); 
+
+// Добавляем обработчик события 'input'
+searchInput.addEventListener('input', function() {
+    // Получаем значение из поля поиска и переводим в нижний регистр
+    const searchTerm = this.value.toLowerCase();
+
+    // Проходим по всем секциям
+    searchableSections.forEach(section => {
+        // Получаем весь текст внутри секции и переводим в нижний регистр
+        const sectionText = section.textContent.toLowerCase();
+
+        // Проверяем, содержит ли текст секции искомый термин
+        if (sectionText.includes(searchTerm)) {
+            // Если да, показываем секцию
+            section.style.display = 'block';
+        } else {
+            // Если нет, скрываем секцию
+            section.style.display = 'none';
+        }
+    });
+});ы
 </script>
 </body>
 </html>
