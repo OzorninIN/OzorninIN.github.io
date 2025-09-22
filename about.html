@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
     <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght@400;500;700;900&family=Space+Grotesk%3Awght@400;500;700&family=Orbitron%3Awght@700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <title>Озорнин И.Н. - Об авторе</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-    <!-- Устанавливаем кастомный брейкпоинт для Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -55,6 +55,13 @@
         /* Кнопки-спаны с навыками */
         .high-contrast .bg-\[\#233c48\].text-\[\#92b7c9\] {
             background-color: #e2e6ea !important;
+            color: #000000 !important;
+        }
+        /* Переопределяем цвета кнопок в режиме high-contrast */
+        .high-contrast .button-bg-blue {
+            background-color: #ffffff !important;
+        }
+        .high-contrast .button-text-white {
             color: #000000 !important;
         }
         .high-contrast .hover\:bg-\[\#233c48\]:hover,
@@ -107,7 +114,6 @@
                         <span class="material-symbols-outlined text-3xl"> code </span>
                         <h2 class="text-white text-xl font-bold tracking-tight">Озорнин И.Н.</h2>
                     </a>
-                    <!-- Теперь десктопное меню появляется при ширине 1140px -->
                     <nav class="hidden desktop:flex items-center gap-6">
                         <a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="index.html">Главная</a>
                         <a class="text-white text-sm font-medium transition-colors" href="about.html" aria-current="page">Об авторе</a>
@@ -121,16 +127,14 @@
                         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92b7c9]"> search </span>
                         <input id="searchInput" class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-[#233c48] text-white placeholder:text-[#92b7c9] focus:outline-0 focus:ring-2 focus:ring-[#1193d4] border-none h-10 pl-10 pr-4 text-sm font-normal" placeholder="Поиск по сайту" type="text" onkeydown="if(event.key==='Enter'){window.location.href='search-results.html?q=' + this.value;}"/>
                     </label>
-                    <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors">
+                    <button id="accessibility-btn" aria-label="Toggle high contrast" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors button-bg-blue button-text-white">
                         <span class="material-symbols-outlined"> visibility </span>
                     </button>
-                    <!-- Кнопка мобильного меню скрывается при 1140px -->
                     <button id="mobile-menu-btn" aria-label="Open menu" class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-md bg-[#233c48] text-white/80 hover:text-white transition-colors desktop:hidden">
                         <span class="material-symbols-outlined"> menu </span>
                     </button>
                 </div>
             </header>
-            <!-- Мобильное меню отображается только на мобильных устройствах -->
             <nav id="mobile-nav" class="hidden desktop:hidden fixed inset-0 z-50 bg-[#111c22] p-10 flex flex-col items-center justify-center gap-6">
                 <button id="mobile-menu-close-btn" aria-label="Close menu" class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors">
                     <span class="material-symbols-outlined text-4xl">close</span>
@@ -142,7 +146,6 @@
                 <a class="text-white/80 hover:text-white text-xl font-medium transition-colors" href="contacts.html">Контакты</a>
             </nav>
             <main class="flex-1 px-4 sm:px-10 desktop:px-20 lg:px-40 py-8">
-                <!-- Основная сетка переключается на 3 колонки при 1140px -->
                 <div class="max-w-5xl mx-auto grid grid-cols-1 desktop:grid-cols-3 gap-12">
                     <aside class="desktop:col-span-1 flex flex-col items-center text-center">
                         <div class="relative w-48 h-48 mb-6">
@@ -236,7 +239,7 @@
                         <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#111c22] to-transparent pointer-events-none certificate-overlay"></div>
                     </div>
                     <div class="flex justify-center mt-6">
-                        <button id="show-more-btn" class="flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors">
+                        <button id="show-more-btn" class="flex min-w-[84px] items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#1193d4] hover:bg-[#233c48] text-white text-base font-bold transition-colors button-bg-blue button-text-white">
                             <span class="truncate">Показать все сертификаты</span>
                         </button>
                     </div>
@@ -257,8 +260,13 @@
             const accessibilityBtn = document.getElementById('accessibility-btn');
             if (accessibilityBtn) {
                 accessibilityBtn.addEventListener('click', function() {
-                    document.body.classList.toggle('high-contrast');
+                    const isHighContrast = document.body.classList.toggle('high-contrast');
+                    localStorage.setItem('highContrastMode', isHighContrast ? 'enabled' : 'disabled');
                 });
+                // Проверяем состояние при загрузке
+                if (localStorage.getItem('highContrastMode') === 'enabled') {
+                    document.body.classList.add('high-contrast');
+                }
             }
             // Скрипт для сворачиваемого блока
             const certificatesContainer = document.getElementById('certificates-container');

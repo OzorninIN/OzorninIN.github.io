@@ -21,6 +21,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <style>
         /* Стили для режима слабовидящих */
+body.high-contrast {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+/* Скрытие фонового изображения на главном баннере */
+.high-contrast .bg-cover {
+    background-image: none !important;
+}
+/* Убираем фоновые цвета с элементов, которые имитируют карточки/кнопки */
+.high-contrast .bg-\[\#1193d4\],
+.high-contrast .bg-\[\#233c48\],
+.high-contrast .bg-\[\#192b33\],
+.high-contrast .bg-center,
+.high-contrast .bg-cover {
+    background-color: #ffffff !important;
+}
+/* Делаем черный текст, убираем полупрозрачность */
+.high-contrast .text-white,
+.high-contrast .text-white\/80,
+.high-contrast .text-\[\#92b7c9\],
+.high-contrast .text-\[\#1193d4\],
+.high-contrast .placeholder\:text-\[\#92b7c9\]::placeholder,
+.high-contrast h1.text-white {
+    color: #000000 !important;
+}
+/* Окрашиваем иконки в черный цвет */
+.high-contrast .material-symbols-outlined {
+    color: #000000 !important;
+}
+/* Делаем границы черными */
+.high-contrast .border-\[\#233c48\],
+.high-contrast .border-\[\#325567\],
+.high-contrast .border-gray-600 {
+    border-color: #000000 !important;
+}
+/* Стили для ссылок в режиме слабовидящих */
+.high-contrast a,
+.high-contrast button {
+    color: #000000 !important;
+}
+/* Скрываем все изображения на странице в режиме слабовидящих */
+.high-contrast img {
+    display: none !important;
+}
+        /* Стили для режима слабовидящих */
         body.high-contrast {
             background-color: #ffffff !important;
             color: #000000 !important;
@@ -225,13 +270,23 @@
     </div>
 </div>
 <script>
-    document.getElementById('accessibility-btn').addEventListener('click', function() {
-        document.body.classList.toggle('high-contrast');
-    });
-
+    const accessibilityBtn = document.getElementById('accessibility-btn');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
     const mobileNav = document.getElementById('mobile-nav');
+
+    // Функция для применения или удаления режима высокой контрастности
+    function toggleHighContrastMode() {
+        const isHighContrast = document.body.classList.toggle('high-contrast');
+        localStorage.setItem('highContrastMode', isHighContrast ? 'enabled' : 'disabled');
+    }
+
+    // Проверяем состояние при загрузке страницы
+    if (localStorage.getItem('highContrastMode') === 'enabled') {
+        document.body.classList.add('high-contrast');
+    }
+
+    accessibilityBtn.addEventListener('click', toggleHighContrastMode);
 
     mobileMenuBtn.addEventListener('click', () => {
         mobileNav.classList.remove('hidden');
@@ -239,6 +294,29 @@
 
     mobileMenuCloseBtn.addEventListener('click', () => {
         mobileNav.classList.add('hidden');
+    });
+
+    // JavaScript для аккордеона
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const accordionItem = header.parentElement;
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.material-symbols-outlined');
+
+            // Закрыть все другие открытые блоки
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                if (item !== accordionItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-content').classList.remove('open');
+                    item.querySelector('.material-symbols-outlined').classList.remove('rotate-180');
+                }
+            });
+
+            // Переключить текущий блок
+            accordionItem.classList.toggle('active');
+            content.classList.toggle('open');
+            icon.classList.toggle('rotate-180');
+        });
     });
 </script>
 </body>

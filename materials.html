@@ -82,6 +82,26 @@
         .incorrect-answer {
             color: #F44336 !important;
         }
+
+        /* Добавленные стили для скрытия картинок и черно-белых радиобоксов */
+        .high-contrast img {
+            display: none !important;
+        }
+        .high-contrast input[type="radio"] {
+            filter: grayscale(100%) !important;
+            border-color: black !important;
+        }
+        .high-contrast input[type="radio"]:checked {
+            background-color: black !important;
+        }
+        
+        /* Новые стили для белых кнопок в режиме слабовидящих */
+        .high-contrast .button-bg-blue {
+            background-color: #f8f9fa !important;
+        }
+        .high-contrast .button-text-white {
+            color: #111c22 !important;
+        }
     </style>
 </head>
 <body class="bg-[#111c22]" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
@@ -135,8 +155,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 p-4">
-                    <!-- КУРС: Веб разработка с нуля -->
-                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
                         <div class="flex items-center gap-4">
                             <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
                                 <span class="material-symbols-outlined">html</span>
@@ -145,13 +164,12 @@
                         </div>
                         <p class="text-[#92b7c9] text-sm">Комплексный курс по основам веб-разработки: от HTML и CSS до JavaScript.</p>
                         <div class="mt-auto flex flex-col gap-2">
-                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
-                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29314-programma-veb-razrabotka-s-nulya-html-css-i-javascript">Записаться на курс</a>
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white" href="https://р38.навигатор.дети/program/29314-programma-veb-razrabotka-s-nulya-html-css-i-javascript">Записаться на курс</a>
                             <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_Web.docx" target="_blank">Методическая разработка</a>
                         </div>
                     </div>
-                    <!-- КУРС: Искусственный интеллект -->
-                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
                         <div class="flex items-center gap-4">
                             <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
                                 <span class="material-symbols-outlined">neurology</span>
@@ -160,13 +178,12 @@
                         </div>
                         <p class="text-[#92b7c9] text-sm">Введение в мир ИИ: от теории до практических примеров и алгоритмов.</p>
                         <div class="mt-auto flex flex-col gap-2">
-                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
-                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29315-programma-iskusstvennyi-intellekt-ot-chat-botov-do-neirosetei">Записаться на курс</a>
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white" href="https://р38.навигатор.дети/program/29315-programma-iskusstvennyi-intellekt-ot-chat-botov-do-neirosetei">Записаться на курс</a>
                             <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_ai.docx" target="_blank">Методическая разработка</a>
                         </div>
                     </div>
-                    <!-- КУРС: Машинное обучение -->
-                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
                         <div class="flex items-center gap-4">
                             <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
                                 <span class="material-symbols-outlined">model_training</span>
@@ -175,13 +192,12 @@
                         </div>
                         <p class="text-[#92b7c9] text-sm">Погружение в алгоритмы машинного обучения и создание своих моделей.</p>
                         <div class="mt-auto flex flex-col gap-2">
-                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
-                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29316-programma-prakticheskii-kurs-po-mashinnomu-obucheniyu-i-neirosetyam">Записаться на курс</a>
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white" href="https://р38.навигатор.дети/program/29316-programma-prakticheskii-kurs-po-mashinnomu-obucheniyu-i-neirosetyam">Записаться на курс</a>
                             <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_ML.docx" target="_blank">Методическая разработка</a>
                         </div>
                     </div>
-                    <!-- КУРС: Видеомонтаж -->
-                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
                         <div class="flex items-center gap-4">
                             <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
                                 <span class="material-symbols-outlined">cut</span>
@@ -190,13 +206,12 @@
                         </div>
                         <p class="text-[#92b7c9] text-sm">Основы работы с видеоредакторами и создание качественного контента.</p>
                         <div class="mt-auto flex flex-col gap-2">
-                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
-                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29312-programma-bazovyi-kurs-videomontazha-dlya-nachinayushchikh">Записаться на курс</a>
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white" href="https://р38.навигатор.дети/program/29312-programma-bazovyi-kurs-videomontazha-dlya-nachinayushchikh">Записаться на курс</a>
                             <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_video.docx" target="_blank">Методическая разработка</a>
                         </div>
                     </div>
-                    <!-- КУРС: PHP и WordPress -->
-                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
                         <div class="flex items-center gap-4">
                             <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
                                 <span class="material-symbols-outlined">php</span>
@@ -205,13 +220,12 @@
                         </div>
                         <p class="text-[#92b7c9] text-sm">Курс по созданию сайтов с использованием PHP и популярной CMS WordPress.</p>
                         <div class="mt-auto flex flex-col gap-2">
-                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">Запросить материалы</button>
-                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="https://р38.навигатор.дети/program/29303-programma-php-i-wordpress-razrabotka-saitov-pod-cms">Записаться на курс</a>
+                            <button onclick="showRequestMessage()" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white">Запросить материалы</button>
+                            <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white" href="https://р38.навигатор.дети/program/29303-programma-php-i-wordpress-razrabotka-saitov-pod-cms">Записаться на курс</a>
                             <a class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-gray-600 hover:bg-gray-500 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full" href="metod/metod_PHP_WP.docx" target="_blank">Методическая разработка</a>
                         </div>
                     </div>
-                    <!-- КУРС: Скоро... -->
-                    <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
+                        <div class="flex flex-1 flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4 hover:bg-[#233c48] transition-colors group">
                         <div class="flex items-center gap-4">
                             <div class="bg-[#1193d4] rounded-md p-3 flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1193d4] transition-colors">
                                 <span class="material-symbols-outlined">rocket_launch</span>
@@ -224,7 +238,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flex flex-wrap justify-between gap-4 p-4 mt-12">
                     <div class="flex flex-col gap-2">
                         <h2 class="text-white tracking-tight text-4xl font-bold leading-tight">Проверьте себя</h2>
@@ -265,9 +278,8 @@
                         <h4 class="text-white text-lg font-bold">4. Что в видеомонтаже называют «таймлайном»?</h4>
                         <div class="flex flex-col gap-2 text-[#92b7c9]">
                             <label><input type="radio" name="question4" value="incorrect" class="mr-2">a) Панель с эффектами и переходами.</label>
-                            <label><input type="radio" name="question4" value="incorrect" class="mr-2">b) Область предварительного просмотра видео.</label>
-                            <label><input type="radio" name="question4" value="correct" class="mr-2">c) Основная рабочая область, где размещаются и редактируются видео- и аудиоклипы в хронологическом порядке.</label>
-                            <label><input type="radio" radio="radio" name="question4" value="incorrect" class="mr-2">d) Панель управления настройками экспорта видео.</label>
+                            <label><input type="radio" radio="radio" name="question4" value="correct" class="mr-2">c) Основная рабочая область, где размещаются и редактируются видео- и аудиоклипы в хронологическом порядке.</label>
+                            <label><input type="radio" name="question4" value="incorrect" class="mr-2">d) Панель управления настройками экспорта видео.</label>
                         </div>
                     </div>
                     <div class="flex flex-col gap-4 rounded-lg border border-[#325567] bg-[#192B33] p-4">
@@ -281,7 +293,7 @@
                     </div>
                 </div>
                 <div class="p-4 mt-6">
-                    <button id="submit-quiz" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full">
+                    <button id="submit-quiz" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 bg-[#1193d4] hover:bg-[#0e7dbb] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 transition-colors w-full button-bg-blue button-text-white">
                         Проверить ответы
                     </button>
                     <div id="quiz-results" class="mt-4 text-white text-lg font-bold hidden"></div>
@@ -298,13 +310,11 @@
         </footer>
     </div>
 </div>
-
-<!-- Сообщение-уведомление -->
 <div id="requestMessage" class="fixed bottom-4 left-1/2 -translate-x-1/2 p-4 rounded-lg max-w-lg w-full text-white border border-[#325567] bg-[#192B33] shadow-lg flex items-center gap-4 hidden z-50">
     <div class="flex-1">
         <p class="text-sm">Для получения планов уроков и презентаций, пожалуйста, отправьте запрос. Мы предоставляем материалы индивидуально для каждого урока, чтобы обеспечить их актуальность и релевантность. Обратитесь ко мне в чате или через форму обратной связи.</p>
     </div>
-    <a href="contacts.html" class="flex-shrink-0 whitespace-nowrap px-4 py-2 rounded-md bg-[#1193d4] hover:bg-[#0e7dbb] text-white text-sm font-bold transition-colors">
+    <a href="contacts.html" class="flex-shrink-0 whitespace-nowrap px-4 py-2 rounded-md bg-[#1193d4] hover:bg-[#0e7dbb] text-white text-sm font-bold transition-colors button-bg-blue button-text-white">
         Перейти к контактам
     </a>
     <button id="closeMessageBtn" class="flex-shrink-0 text-[#92b7c9] hover:text-white transition-colors">
@@ -318,8 +328,14 @@
         const accessibilityBtn = document.getElementById('accessibility-btn');
         if (accessibilityBtn) {
             accessibilityBtn.addEventListener('click', function() {
-                document.body.classList.toggle('high-contrast');
+                const isHighContrast = document.body.classList.toggle('high-contrast');
+                localStorage.setItem('highContrastMode', isHighContrast ? 'enabled' : 'disabled');
             });
+
+            // Проверяем состояние при загрузке
+            if (localStorage.getItem('highContrastMode') === 'enabled') {
+                document.body.classList.add('high-contrast');
+            }
         }
 
         // Скрипт для мобильного меню
@@ -408,10 +424,11 @@
             messageBox.classList.remove('hidden');
         };
 
-        const closeMessageBtn = document.getElementById('closeMessageBtn');
-        if (closeMessageBtn) {
-            closeMessageBtn.addEventListener('click', () => {
-                document.getElementById('requestMessage').classList.add('hidden');
+        const closeBtn = document.getElementById('closeMessageBtn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                const messageBox = document.getElementById('requestMessage');
+                messageBox.classList.add('hidden');
             });
         }
     });
